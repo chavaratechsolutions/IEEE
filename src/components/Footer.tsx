@@ -9,7 +9,7 @@ export default function Footer() {
                     <div className="space-y-4">
                         <h3 className="text-2xl font-bold">ICSCST 2025</h3>
                         <p className="text-secondary-foreground/80 text-sm leading-relaxed">
-                            International Conference on Smart Computing Benefit. Bringing together the brightest minds in technology.
+                            International Conference on Smart Energy, Mobility, and Intelligent Infrastructure.
                         </p>
                         <div className="flex gap-4 pt-2">
                             <a href="#" className="p-2 bg-secondary-foreground/10 rounded-full hover:bg-primary hover:text-white transition-colors">

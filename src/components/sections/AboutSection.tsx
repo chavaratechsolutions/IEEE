@@ -6,7 +6,7 @@ export default function AboutSection() {
     return (
         <section id="about" className="py-20 bg-muted/30">
             <div className="container mx-auto px-4">
-                <div className="about">
+                <div className="sticky top-20 z-10 bg-background rounded-3xl p-8 shadow-xl mb-12 about">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export default function AboutSection() {
                     </motion.div>
                 </div>
 
-                <div className="about2">
+                <div className="sticky top-24 z-20 bg-background rounded-3xl p-8 shadow-xl mb-12 about2">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +148,7 @@ export default function AboutSection() {
                     </motion.div>
                 </div>
 
-                <div className="about3">
+                <div className="sticky top-28 z-30 bg-background rounded-3xl p-8 shadow-xl mb-12 about3">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

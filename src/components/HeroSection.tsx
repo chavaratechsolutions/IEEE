@@ -41,7 +41,7 @@ export default function HeroSection() {
                     className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
                 >
                     IEEE International Conference on <br />
-                    <span className="text-gradient">Smart Computing Benefit</span>
+                    <span className="text-gradient">Smart Energy, Mobility, and Intelligent Infrastructure</span>
                 </motion.h1>
 
                 <motion.p
@@ -61,12 +61,12 @@ export default function HeroSection() {
                 >
                     <div className="flex items-center gap-2 text-muted-foreground">
                         <Calendar className="w-5 h-5 text-primary" />
-                        <span>October 15-17, 2025</span>
+                        <span>25-26 March, 2027</span>
                     </div>
                     <div className="hidden sm:block w-px h-6 bg-border" />
                     <div className="flex items-center gap-2 text-muted-foreground">
                         <MapPin className="w-5 h-5 text-primary" />
-                        <span>New York City, USA</span>
+                        <span>Carmel College of Engineering and Technology, Alappuzha, Kerala</span>
                     </div>
                 </motion.div>
 
@@ -76,18 +76,12 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.8 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    <a
-                        href="#register"
-                        className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95 flex items-center gap-2"
-                    >
-                        Register Now
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
+
                     <a
                         href="#cfp"
                         className="px-8 py-4 bg-background border border-input text-foreground font-semibold rounded-full hover:bg-muted/50 transition-all hover:-translate-y-1 active:scale-95"
                     >
-                        Submit Paper
+                        Call for Paper
                     </a>
                 </motion.div>
             </div>

@@ -35,23 +35,23 @@ export default function DatesSection() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative pl-8 md:pl-0"
+                            className="relative"
                         >
-                            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border -z-10" />
+                            <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border -z-10" />
 
-                            <div className={`md:flex items-center justify-between mb-8 ${index % 2 === 0 ? "flex-row-reverse" : ""}`}>
-                                <div className="md:w-5/12" />
+                            <div className={`flex items-center justify-between mb-8 ${index % 2 === 0 ? "flex-row-reverse" : ""}`}>
+                                <div className="w-5/12" />
 
-                                <div className="absolute left-0 md:left-1/2 -translate-x-1.5 md:-translate-x-1/2 w-4 h-4 rounded-full bg-background border-4 border-primary z-10" />
+                                <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-4 border-primary z-10" />
 
-                                <div className={`md:w-5/12 p-6 rounded-xl border ${item.type === "urgent" ? "bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-900" :
+                                <div className={`w-5/12 p-6 rounded-xl border ${item.type === "urgent" ? "bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-900" :
                                     item.type === "primary" ? "bg-primary/5 border-primary/20" :
                                         "bg-card border-border"
                                     } shadow-sm hover:shadow-md transition-shadow`}>
                                     <div className="flex items-center gap-2 mb-2">
                                         <CalendarClock className={`w-4 h-4 ${item.type === "urgent" ? "text-red-500" : "text-primary"
                                             }`} />
-                                        <span className="font-semibold">{item.date}</span>
+                                        <span className={`font-bold ${item.type === "urgent" ? "text-red-600" : "text-primary"}`}>{item.date}</span>
                                     </div>
                                     <h3 className="text-lg font-medium">{item.event}</h3>
                                 </div>
