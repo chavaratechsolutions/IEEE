@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 import { CalendarClock } from "lucide-react";
 
 const dates = [
-    { date: "June 15, 2025", event: "Paper Submission Deadline", type: "urgent" },
-    { date: "August 01, 2025", event: "Notification of Acceptance", type: "normal" },
-    { date: "August 15, 2025", event: "Camera Ready Submission", type: "normal" },
-    { date: "September 01, 2025", event: "Early Bird Registration", type: "normal" },
-    { date: "October 15-17, 2025", event: "Conference Dates", type: "primary" },
+    { date: "December 15, 2026", event: "Call for Papers Announcement", type: "primary" },
+    { date: "January 11, 2027", event: "Draft Paper Submission", type: "normal" },
+    { date: "February 11, 2027", event: "Notification of Acceptance", type: "normal" },
+    { date: "March 1, 2027", event: "Final Camera-ready Paper", type: "normal" },
 ];
 
 export default function DatesSection() {
@@ -25,8 +24,7 @@ export default function DatesSection() {
                     <span className="text-primary font-semibold mb-2 block">SCHEDULE</span>
                     <h2 className="text-3xl font-bold mb-4">Important Dates</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        Mark your calendar with these crucial deadlines and event dates.
-                    </p>
+                        Key deadlines for ICSEMI 2027                    </p>
                 </motion.div>
 
                 <div className="max-w-3xl mx-auto">
@@ -47,8 +45,8 @@ export default function DatesSection() {
                                 <div className="absolute left-0 md:left-1/2 -translate-x-1.5 md:-translate-x-1/2 w-4 h-4 rounded-full bg-background border-4 border-primary z-10" />
 
                                 <div className={`md:w-5/12 p-6 rounded-xl border ${item.type === "urgent" ? "bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-900" :
-                                        item.type === "primary" ? "bg-primary/5 border-primary/20" :
-                                            "bg-card border-border"
+                                    item.type === "primary" ? "bg-primary/5 border-primary/20" :
+                                        "bg-card border-border"
                                     } shadow-sm hover:shadow-md transition-shadow`}>
                                     <div className="flex items-center gap-2 mb-2">
                                         <CalendarClock className={`w-4 h-4 ${item.type === "urgent" ? "text-red-500" : "text-primary"

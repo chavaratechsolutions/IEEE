@@ -80,12 +80,12 @@ export default function Navbar() {
                             )}
                         </a>
                     ))}
-                    <a
+                    {/* <a
                         href="#register"
                         className="ml-4 px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-full hover:bg-primary/90 transition-all shadow-md hover:shadow-lg active:scale-95"
                     >
                         Register
-                    </a>
+                    </a> */}
                 </div>
 
                 {/* Mobile Menu Button */}

@@ -38,14 +38,22 @@ export default function BrochureSection() {
                         </div>
 
                         <div className="mt-8 flex gap-4">
-                            <button className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center gap-2">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center gap-2"
+                            >
                                 <Download className="w-4 h-4" />
                                 Download PDF
-                            </button>
-                            <button className="px-6 py-3 border border-input bg-background hover:bg-muted text-foreground rounded-lg font-medium transition-colors flex items-center gap-2">
+                            </motion.button>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-6 py-3 border border-input bg-background hover:bg-muted text-foreground rounded-lg font-medium transition-colors flex items-center gap-2"
+                            >
                                 View Online
                                 <ArrowRight className="w-4 h-4" />
-                            </button>
+                            </motion.button>
                         </div>
                     </motion.div>
 

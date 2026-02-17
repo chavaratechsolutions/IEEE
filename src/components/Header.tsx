@@ -17,9 +17,9 @@ export default function Header() {
                 </div>
                 <div className="flex items-center gap-4">
                     <span className="font-semibold hidden md:inline">IEEE International Conference on Smart Computing</span>
-                    <Link href="/login" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
+                    {/* <Link href="/login" className="hover:underline opacity-90 hover:opacity-100 transition-opacity">
                         Member Login
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </div>

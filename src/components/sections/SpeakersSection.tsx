@@ -34,9 +34,10 @@ export default function SpeakersSection() {
                             key={index}
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
+                            whileHover={{ y: -10 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative overflow-hidden rounded-2xl bg-background border border-border"
+                            className="group relative overflow-hidden rounded-2xl bg-background border border-border shadow-sm hover:shadow-xl transition-all"
                         >
                             <div className="aspect-[3/4] bg-muted relative overflow-hidden">
                                 {/* 

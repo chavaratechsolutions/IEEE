@@ -96,10 +96,15 @@ export default function ContactSection() {
                                 <label htmlFor="message" className="text-sm font-medium">Message</label>
                                 <textarea id="message" rows={4} className="w-full px-3 py-2 border border-input rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none" placeholder="Your message here..." />
                             </div>
-                            <button type="submit" className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                            <motion.button
+                                type="submit"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                            >
                                 Send Message
                                 <Send className="w-4 h-4" />
-                            </button>
+                            </motion.button>
                         </form>
                     </motion.div>
                 </div>

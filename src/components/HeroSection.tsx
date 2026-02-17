@@ -1,14 +1,24 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Calendar, MapPin } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Calendar, MapPin, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
+    const { scrollY } = useScroll();
+    const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+    const y2 = useTransform(scrollY, [0, 500], [0, -150]);
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16">
             {/* Background Elements */}
-            <div className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background z-0" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl z-0" />
+            <motion.div
+                style={{ y: y1, opacity: 0.5 }}
+                className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background z-0"
+            />
+            <motion.div
+                style={{ y: y2, opacity: 0.3 }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl z-0"
+            />
 
             <div className="container mx-auto px-4 z-10 text-center">
                 <motion.div
@@ -81,6 +91,22 @@ export default function HeroSection() {
                     </a>
                 </motion.div>
             </div>
+
+            {/* Scroll Down Indicator */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, y: [0, 10, 0] }}
+                transition={{
+                    opacity: { delay: 1, duration: 1 },
+                    y: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
+                }}
+                className="absolute bottom-20 left-1/2 -translate-x-1/2 text-muted-foreground"
+            >
+                <div className="flex flex-col items-center gap-2">
+                    <span className="text-xs uppercase tracking-widest">Scroll Down</span>
+                    <ChevronDown className="w-5 h-5" />
+                </div>
+            </motion.div>
         </section>
     );
 }

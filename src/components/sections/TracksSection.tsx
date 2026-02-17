@@ -26,8 +26,7 @@ export default function TracksSection() {
                     <span className="text-primary font-semibold mb-2 block">TOPICS</span>
                     <h2 className="text-3xl font-bold mb-4">Conference Tracks</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        Explore the diverse range of topics covered in this year's conference.
-                    </p>
+                        ICSEMI 2027 welcomes original contributions across the following thematic tracks.                    </p>
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -36,9 +35,10 @@ export default function TracksSection() {
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ y: -5 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group p-6 bg-background rounded-xl border border-border hover:border-primary/50 transition-all hover:shadow-lg"
+                            className="group p-6 bg-background rounded-xl border border-border hover:border-primary/50 transition-all hover:shadow-xl"
                         >
                             <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
                                 <track.icon className="w-6 h-6" />
