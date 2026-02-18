@@ -18,6 +18,7 @@ import BackToTop from "@/components/ui/BackToTop";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import CountdownWrapper from "@/components/FlipClock/CountdownWrapper";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +50,9 @@ export default function Home() {
       <CommitteesSection />
       <VenueSection />
       <BrochureSection />
+      <CountdownWrapper />
       <ContactSection />
+
       <Footer />
       <BackToTop />
     </main>

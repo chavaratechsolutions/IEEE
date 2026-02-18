@@ -58,7 +58,7 @@ export default function Navbar() {
                     <div className="bg-primary text-white p-1.5 rounded-md font-bold text-xl group-hover:bg-primary/90 transition-colors">
                         IEEE
                     </div>
-                    <span className="font-bold text-xl tracking-tight text-foreground">ICSCST 2025</span>
+                    <span className="font-bold text-xl tracking-tight text-foreground">ICSEMII 2027</span>
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -118,13 +118,13 @@ export default function Navbar() {
                             </a>
                         ))}
                         <div className="h-px bg-border my-2" />
-                        <a
+                        {/* <a
                             href="#register"
                             className="w-full text-center px-4 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors"
                             onClick={() => setIsOpen(false)}
                         >
                             Register Now
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             )}

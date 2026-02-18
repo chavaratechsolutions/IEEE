@@ -41,10 +41,10 @@ export default function VenueSection() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="absolute bottom-4 left-4 right-4 md:left-auto md:right-4 md:bottom-4 md:w-96 bg-card/95 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-border"
+                        className="absolute bottom-4 left-4 right-4 md:left-auto md:right-4 md:bottom-4 md:w-96 bg-card/30 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-border"
                     >
                         <div className="flex flex-col justify-center">
-                            <h3 className="text-xl font-bold mb-4 text-center md:text-left">Carmel College of Engineering and Technology</h3>
+                            <h3 className="text-xl font-bold mb-4 text-center md:text-left">Conference Venue</h3>
 
                             <div className="space-y-4">
                                 <div className="flex items-start gap-3">
@@ -52,7 +52,7 @@ export default function VenueSection() {
                                         <MapPin className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-sm mb-1">Conference Location</h4>
+                                        <h4 className="font-semibold text-sm mb-1">Carmel College of Engineering and Technology</h4>
                                         <p className="text-sm text-muted-foreground">
                                             Punnapra, Alappuzha, Kerala - 688004
                                         </p>

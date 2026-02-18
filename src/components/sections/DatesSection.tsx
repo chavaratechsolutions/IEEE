@@ -27,7 +27,10 @@ export default function DatesSection() {
                         Key deadlines for ICSEMI 2027                    </p>
                 </motion.div>
 
-                <div className="max-w-3xl mx-auto">
+                <div className="max-w-3xl mx-auto relative">
+                    {/* Continuous Vertical Line (Desktop Only) */}
+                    <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-border -z-10" />
+
                     {dates.map((item, index) => (
                         <motion.div
                             key={index}
@@ -35,19 +38,20 @@ export default function DatesSection() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative"
+                            className="relative md:mb-8 last:mb-0"
                         >
-                            <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border -z-10" />
+                            <div className={`flex flex-col md:flex-row items-center justify-between ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+                                {/* Empty Spacer for Desktop */}
+                                <div className="hidden md:block w-5/12" />
 
-                            <div className={`flex items-center justify-between mb-8 ${index % 2 === 0 ? "flex-row-reverse" : ""}`}>
-                                <div className="w-5/12" />
+                                {/* Timeline Dot (Desktop Only) */}
+                                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-4 border-primary z-10" />
 
-                                <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-4 border-primary z-10" />
-
-                                <div className={`w-5/12 p-6 rounded-xl border ${item.type === "urgent" ? "bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-900" :
+                                {/* Content Card */}
+                                <div className={`w-[70%] md:w-5/12 p-6 rounded-xl border ${item.type === "urgent" ? "bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-900" :
                                     item.type === "primary" ? "bg-primary/5 border-primary/20" :
                                         "bg-card border-border"
-                                    } shadow-sm hover:shadow-md transition-shadow`}>
+                                    } shadow-sm hover:shadow-md transition-shadow ${index % 2 === 0 ? "self-start" : "self-end"} md:self-auto`}>
                                     <div className="flex items-center gap-2 mb-2">
                                         <CalendarClock className={`w-4 h-4 ${item.type === "urgent" ? "text-red-500" : "text-primary"
                                             }`} />
@@ -56,6 +60,11 @@ export default function DatesSection() {
                                     <h3 className="text-lg font-medium">{item.event}</h3>
                                 </div>
                             </div>
+
+                            {/* Dashed Connector Line (Mobile Only) */}
+                            {index !== dates.length - 1 && (
+                                <div className="md:hidden h-8 w-0.5 border-l-2 border-dashed border-muted-foreground/30 mx-auto my-2" />
+                            )}
                         </motion.div>
                     ))}
                 </div>

@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const speakers = [
-    { name: "Dr. Elena Rodriguez", role: "AI Research Director", org: "Tech Institute", image: "/placeholder-speaker-1.jpg" },
-    { name: "Prof. James Chen", role: "Chair of Computer Science", org: "University of Innovation", image: "/placeholder-speaker-2.jpg" },
-    { name: "Sarah Williams", role: "Chief Technology Officer", org: "Future Systems", image: "/placeholder-speaker-3.jpg" },
-    { name: "Dr. Michael Change", role: "Head of Robotics", org: "Global Dynamics", image: "/placeholder-speaker-4.jpg" },
+    { name: "aaaa", role: "aaaaa", org: "aaaa", image: "/placeholder-speaker-1.jpg" },
+    { name: "bbbb", role: "bbbb", org: "aaaaa", image: "/placeholder-speaker-2.jpg" },
+    { name: "cccc", role: "ccccc", org: "aaa", image: "/placeholder-speaker-3.jpg" },
+    { name: "dddd", role: "ddddd", org: "aaaaa", image: "/placeholder-speaker-4.jpg" },
 ];
 
 export default function SpeakersSection() {

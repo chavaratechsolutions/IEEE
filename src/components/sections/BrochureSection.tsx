@@ -18,11 +18,11 @@ export default function BrochureSection() {
                     >
                         <span className="text-primary font-semibold mb-2 block">RESOURCES</span>
                         <h2 className="text-3xl font-bold mb-6">Conference Brochure</h2>
-                        <p className="text-muted-foreground mb-8 text-lg">
+                        {/* <p className="text-muted-foreground mb-8 text-lg">
                             Get all the details about the conference, including the full schedule, speaker bios, and workshop descriptions in our comprehensive brochure.
-                        </p>
+                        </p> */}
 
-                        <div className="space-y-4">
+                        {/* <div className="space-y-4">
                             <div className="flex items-center gap-3">
                                 <div className="w-2 h-2 rounded-full bg-primary" />
                                 <p>Complete Technical Program</p>
@@ -35,9 +35,9 @@ export default function BrochureSection() {
                                 <div className="w-2 h-2 rounded-full bg-primary" />
                                 <p>Venue Maps and Local Guide</p>
                             </div>
-                        </div>
+                        </div> */}
 
-                        <div className="mt-8 flex gap-4">
+                        {/* <div className="mt-8 flex gap-4">
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -54,10 +54,10 @@ export default function BrochureSection() {
                                 View Online
                                 <ArrowRight className="w-4 h-4" />
                             </motion.button>
-                        </div>
+                        </div> */}
                     </motion.div>
 
-                    <motion.div
+                    {/* <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -73,7 +73,7 @@ export default function BrochureSection() {
                                 <p className="text-sm text-gray-500">Conference Program</p>
                             </div>
                         </div>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </div>
         </section>

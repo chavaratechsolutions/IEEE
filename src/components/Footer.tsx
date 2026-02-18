@@ -7,11 +7,11 @@ export default function Footer() {
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-4 gap-8 mb-12">
                     <div className="space-y-4">
-                        <h3 className="text-2xl font-bold">ICSCST 2025</h3>
+                        <h3 className="text-2xl font-bold">ICSEMII 2027</h3>
                         <p className="text-secondary-foreground/80 text-sm leading-relaxed">
                             International Conference on Smart Energy, Mobility, and Intelligent Infrastructure.
                         </p>
-                        <div className="flex gap-4 pt-2">
+                        {/* <div className="flex gap-4 pt-2">
                             <a href="#" className="p-2 bg-secondary-foreground/10 rounded-full hover:bg-primary hover:text-white transition-colors">
                                 <Facebook className="w-4 h-4" />
                             </a>
@@ -24,7 +24,7 @@ export default function Footer() {
                             <a href="#" className="p-2 bg-secondary-foreground/10 rounded-full hover:bg-primary hover:text-white transition-colors">
                                 <Instagram className="w-4 h-4" />
                             </a>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div>
@@ -49,7 +49,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div>
+                    {/* <div>
                         <h4 className="font-semibold text-lg mb-4">Newsletter</h4>
                         <p className="text-sm text-secondary-foreground/80 mb-4">
                             Subscribe to stay updated with the latest news and announcements.
@@ -64,11 +64,11 @@ export default function Footer() {
                                 Subscribe
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="border-t border-secondary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-secondary-foreground/60">
-                    <p>© 2025 IEEE ICSCST. All rights reserved.</p>
+                    <p>© 2027 IEEE ICSEMII. All rights reserved.</p>
                     <div className="flex gap-6">
                         <span className="flex items-center gap-2">
                             <div className="w-2 h-2 bg-green-500 rounded-full"></div>

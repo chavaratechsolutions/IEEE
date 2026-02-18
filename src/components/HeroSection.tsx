@@ -50,7 +50,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
                 >
-                    Join leading researchers and practitioners to explore the future of smart computing technologies and their applications.
+                    Innovating at the IEEE International Conference on Smart Energy, Mobility, and Intelligent Infrastructure for a more sustainable future.
                 </motion.p>
 
                 <motion.div

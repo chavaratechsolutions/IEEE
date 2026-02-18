@@ -1,12 +1,70 @@
-"use client";
-
 import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 
 export default function AboutSection() {
+    const card1Ref = useRef<HTMLDivElement>(null);
+    const card2Ref = useRef<HTMLDivElement>(null);
+    const card3Ref = useRef<HTMLDivElement>(null);
+
+    const [mobileTops, setMobileTops] = useState<{ [key: string]: number | undefined }>({});
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const calculateTops = () => {
+            const mobile = window.innerWidth < 1024;
+            setIsMobile(mobile);
+
+            if (mobile) {
+                const vh = window.innerHeight;
+                // 5vh margin
+                const margin = vh * 0.05;
+
+                const tops: { [key: string]: number } = {};
+
+                if (card1Ref.current) {
+                    // top = 95vh - height
+                    tops.card1 = vh - card1Ref.current.offsetHeight - margin;
+                }
+                if (card2Ref.current) {
+                    tops.card2 = vh - card2Ref.current.offsetHeight - margin;
+                }
+                if (card3Ref.current) {
+                    tops.card3 = vh - card3Ref.current.offsetHeight - margin;
+                }
+
+                setMobileTops(tops);
+            } else {
+                setMobileTops({});
+            }
+        };
+
+        calculateTops();
+        window.addEventListener('resize', calculateTops);
+
+        // Recalculate after a short delay to ensure content renders/images load
+        const timeout = setTimeout(calculateTops, 500);
+
+        return () => {
+            window.removeEventListener('resize', calculateTops);
+            clearTimeout(timeout);
+        };
+    }, []);
+
     return (
         <section id="about" className="py-20 bg-muted/30">
             <div className="container mx-auto px-4">
-                <div className="sticky top-20 z-10 bg-background rounded-3xl p-8 shadow-xl mb-12 about">
+                <div
+                    ref={card1Ref}
+                    className="sticky lg:sticky lg:top-20 z-10 bg-background rounded-3xl p-8 shadow-xl mb-12 about"
+                    style={{ top: isMobile ? mobileTops.card1 : undefined }}
+                >
+                    <div className="hidden lg:block absolute -top-20 left-0" style={{ top: "5rem" }}></div> {/* Desktop sticky offset anchor if needed, but using class is better */}
+                    {/* Note: Desktop uses lg:top-20 class. On mobile we override with inline style. 
+                        We need to ensure the class doesn't conflict. 
+                        Tailwind 'top-20' is 5rem. 
+                        If we use inline style 'top', it overrides the class. perfect. 
+                    */}
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -44,31 +102,19 @@ export default function AboutSection() {
                             >
                                 It encourages interdisciplinary collaboration among EEE, E&I, ECE, CSE, and Mechanical Engineering to develop integrated engineering solutions. Overall, ICSEMII provides a forum for knowledge exchange, innovation, and collaborative research aimed at building energy-efficient, intelligent, and sustainable systems for future societies.
                             </motion.p>
-                            {/* <div className="grid grid-cols-2 gap-6 mt-8">
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-primary mb-1">500+</div>
-                                <div className="text-sm text-muted-foreground">Attendees</div>
-                            </div>
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-accent mb-1">50+</div>
-                                <div className="text-sm text-muted-foreground">Countries</div>
-                            </div>
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-secondary mb-1">100+</div>
-                                <div className="text-sm text-muted-foreground">Speakers</div>
-                            </div>
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-purple-600 mb-1">20+</div>
-                                <div className="text-sm text-muted-foreground">Workshops</div>
-                            </div>
-                        </div> */}
                         </div>
 
 
                     </motion.div>
                 </div>
 
-                <div className="sticky top-24 z-20 bg-background rounded-3xl p-8 shadow-xl mb-12 about2">
+                <div
+                    ref={card2Ref}
+                    className="sticky lg:sticky lg:top-24 z-20 bg-background rounded-3xl p-8 shadow-xl mb-12 about2"
+                    style={{ top: isMobile ? mobileTops.card2 : undefined }}
+                >
+                    <div className="hidden lg:block absolute -top-24 left-0" style={{ top: "6rem" }}></div>
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -115,24 +161,6 @@ export default function AboutSection() {
                             >
                                 At CCET, students can pursue 4-year Bachelor of Technology (B.Tech) degree programs in four major disciplines: Civil Engineering, Mechanical Engineering, Electrical and Electronics Engineering, and Computer Science and Engineering. Each program is designed to equip students with the theoretical knowledge and practical skills needed to excel in their chosen fields. The college boasts state-of-the-art laboratories, a well-stocked library, and modern classrooms, all of which contribute to a conducive learning environment.
                             </motion.p>
-                            {/* <div className="grid grid-cols-2 gap-6 mt-8">
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-primary mb-1">500+</div>
-                                <div className="text-sm text-muted-foreground">Attendees</div>
-                            </div>
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-accent mb-1">50+</div>
-                                <div className="text-sm text-muted-foreground">Countries</div>
-                            </div>
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-secondary mb-1">100+</div>
-                                <div className="text-sm text-muted-foreground">Speakers</div>
-                            </div>
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-purple-600 mb-1">20+</div>
-                                <div className="text-sm text-muted-foreground">Workshops</div>
-                            </div>
-                        </div> */}
                         </div>
 
                         <div className="hidden lg:block w-full lg:flex-1 relative">
@@ -148,7 +176,13 @@ export default function AboutSection() {
                     </motion.div>
                 </div>
 
-                <div className="sticky top-28 z-30 bg-background rounded-3xl p-8 shadow-xl mb-12 about3">
+                <div
+                    ref={card3Ref}
+                    className="sticky lg:sticky lg:top-28 z-30 bg-background rounded-3xl p-8 shadow-xl mb-12 about3"
+                    style={{ top: isMobile ? mobileTops.card3 : undefined }}
+                >
+                    <div className="hidden lg:block absolute -top-28 left-0" style={{ top: "7rem" }}></div>
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -186,24 +220,6 @@ export default function AboutSection() {
                             >
                                 The department has also made great progress in research and innovation. Over the years, it has completed several government-funded projects, giving students opportunities to gain hands-on experience and work on real-world problems. It has a very active Institute of Electrical and Electronics Engineers (IEEE) student branch along with the Power and Energy Society (PES), where students participate in workshops, seminars, and competitions that help them improve their technical knowledge and leadership skills. Many events have been conducted in collaboration with IEEE, which gives students the chance to connect with professionals and experts in the field. The department has also received financial support and recognition from agencies such as Kerala Development and Innovation Strategic Council (K-DISC), Kerala State Council for Science, Technology and Environment (KSCSTE), and IEEE PES. These achievements show the department's commitment to promoting innovation, research, and student development.
                             </motion.p>
-                            {/* <div className="grid grid-cols-2 gap-6 mt-8">
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-primary mb-1">500+</div>
-                                <div className="text-sm text-muted-foreground">Attendees</div>
-                            </div>
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-accent mb-1">50+</div>
-                                <div className="text-sm text-muted-foreground">Countries</div>
-                            </div>
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-secondary mb-1">100+</div>
-                                <div className="text-sm text-muted-foreground">Speakers</div>
-                            </div>
-                            <div className="p-4 bg-background rounded-xl shadow-sm border border-border">
-                                <div className="text-3xl font-bold text-purple-600 mb-1">20+</div>
-                                <div className="text-sm text-muted-foreground">Workshops</div>
-                            </div>
-                        </div> */}
                         </div>
 
                         <div className="hidden lg:block w-full lg:flex-1 relative">
