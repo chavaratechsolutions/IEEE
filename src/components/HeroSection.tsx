@@ -40,6 +40,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
                 >
+                    {/* <span className="block text-xl md:text-2xl mb-4 text-primary font-extrabold tracking-widest">ICSEMII 2027</span> */}
                     IEEE International Conference on <br />
                     <span className="text-gradient">Smart Energy, Mobility, and Intelligent Infrastructure</span>
                 </motion.h1>
