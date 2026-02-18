@@ -92,7 +92,7 @@ export default function ContactSection() {
                                 <Mail className="w-6 h-6" />
                             </div>
                             <div>
-                                <h4 className="font-semibold mb-1">Email Us</h4>
+                                <h3 className="font-semibold mb-1">Email Us</h3>
                                 <p className="text-muted-foreground text-sm mb-2">General Inquiries</p>
                                 <a href="mailto:info@icscst2025.org" className="text-primary hover:underline">ieeesb@carmelcet.in</a>
                             </div>
@@ -103,7 +103,7 @@ export default function ContactSection() {
                                 <Phone className="w-6 h-6" />
                             </div>
                             <div>
-                                <h4 className="font-semibold mb-1">Call Us</h4>
+                                <h3 className="font-semibold mb-1">Call Us</h3>
                                 <p className="text-muted-foreground text-sm mb-2">Mon-Fri </p>
                                 <a className="text-primary hover:underline">+91 9995823865</a><br />
                                 <a className="text-primary hover:underline">+91 9495547110</a>
@@ -115,7 +115,7 @@ export default function ContactSection() {
                                 <MapPin className="w-6 h-6" />
                             </div>
                             <div>
-                                <h4 className="font-semibold mb-1">Address</h4>
+                                <h3 className="font-semibold mb-1">Address</h3>
                                 <p className="text-muted-foreground text-sm">
                                     Carmel College of Engineering and Technology<br />
                                     Punnapra P O<br />

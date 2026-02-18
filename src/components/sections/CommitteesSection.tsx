@@ -76,7 +76,7 @@ export default function CommitteesSection() {
                             </div>
 
                             <div className="p-4 text-center relative">
-                                <h4 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">{member.name}</h4>
+                                <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">{member.name}</h3>
                                 <p className="text-sm font-medium text-primary mb-1">{member.designation}</p>
                                 <p className="text-xs text-muted-foreground">{member.affiliation}</p>
                             </div>
