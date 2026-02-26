@@ -48,7 +48,7 @@ export default function CommitteesSection() {
                     className="text-center mb-16"
                 >
                     <span className="text-primary font-semibold mb-2 block">ORGANIZERS</span>
-                    <h2 className="text-3xl font-bold mb-4">Conference Committees</h2>
+                    <h2 className="text-3xl font-bold mb-4 heading-glow">Conference Committees</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
                         The dedicated team behind the success of this international conference.
                     </p>

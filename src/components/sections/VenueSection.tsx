@@ -15,7 +15,7 @@ export default function VenueSection() {
                     className="text-center mb-16"
                 >
                     <span className="text-primary font-semibold mb-2 block">LOCATION</span>
-                    <h2 className="text-3xl font-bold mb-4">Venue</h2>
+                    <h2 className="text-3xl font-bold mb-4 heading-glow">Venue</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
                         Experience the vibrant college campus while attending the conference.
                     </p>

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import UnitGroup from "./UnitGroup";
 import { differenceInSeconds } from "date-fns";
 
-const TARGET_DATE = new Date("2027-03-27T12:01:00");
+const TARGET_DATE = new Date("2027-03-26T12:01:00");
 
 const calculateTotalTimeLeft = () => {
     const now = new Date();

@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Globe, Database, Shield, Smartphone, Cloud } from "lucide-react";
+import { Receipt, TreeDeciduous, Database, Shield, Smartphone, Cloud } from "lucide-react";
 
 const tracks = [
-    { icon: Cpu, title: "Internet of Things", desc: "loT Architectures, Protocols, and Applications" },
-    { icon: Globe, title: "Artificial Intelligence", desc: "Machine Learning, Deep Learning, and Neural Networks" },
-    { icon: Database, title: "Big Data Analytics", desc: "Data Mining, Visualization, and Predictive Analytics" },
-    { icon: Shield, title: "Cyber Security", desc: "Network Security, Cryptography, and Privacy" },
-    { icon: Smartphone, title: "Mobile Computing", desc: "5G/6G Networks, Mobile Ad-hoc Networks" },
-    { icon: Cloud, title: "Cloud Computing", desc: "Edge Computing, Serverless Architectures, and Virtualization" },
+    { icon: Receipt, title: "", desc: "" },
+    { icon: TreeDeciduous, title: "", desc: "" },
+    { icon: Database, title: "", desc: "" },
+    { icon: Shield, title: "", desc: "" },
+    { icon: Smartphone, title: "", desc: "" },
+    { icon: Cloud, title: "", desc: "" },
 ];
 
 export default function TracksSection() {
@@ -24,7 +24,7 @@ export default function TracksSection() {
                     className="text-center mb-16"
                 >
                     <span className="text-primary font-semibold mb-2 block">TOPICS</span>
-                    <h2 className="text-3xl font-bold mb-4">Conference Tracks</h2>
+                    <h2 className="text-3xl font-bold mb-4 heading-glow">Conference Tracks</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
                         ICSEMI 2027 welcomes original contributions across the following thematic tracks.                    </p>
                 </motion.div>

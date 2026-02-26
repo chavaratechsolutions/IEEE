@@ -55,8 +55,8 @@ export default function AboutSection() {
             <div className="container mx-auto px-4">
                 <div
                     ref={card1Ref}
-                    className="sticky lg:sticky lg:top-20 z-10 bg-background rounded-3xl p-8 shadow-xl mb-12 about"
-                    style={{ top: isMobile ? mobileTops.card1 : undefined }}
+                    className="sticky lg:sticky lg:top-20 z-10 rounded-3xl p-8 shadow-xl mb-12 about"
+                    style={{ top: isMobile ? mobileTops.card1 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background) 93%, white))" }}
                 >
                     <div className="hidden lg:block absolute -top-20 left-0" style={{ top: "5rem" }}></div> {/* Desktop sticky offset anchor if needed, but using class is better */}
                     {/* Note: Desktop uses lg:top-20 class. On mobile we override with inline style. 
@@ -73,7 +73,7 @@ export default function AboutSection() {
                         className="flex flex-col lg:flex-row gap-12 items-center mb-16"
                     >
                         <div className="w-full lg:flex-1">
-                            <h2 className="text-3xl font-bold mb-6 text-white text-center">About the Conference</h2>
+                            <h2 className="text-3xl font-bold mb-6 text-white text-center heading-glow">About the Conference</h2>
 
                             <motion.p
                                 initial={{ opacity: 0, x: -20 }}
@@ -110,8 +110,8 @@ export default function AboutSection() {
 
                 <div
                     ref={card2Ref}
-                    className="sticky lg:sticky lg:top-24 z-20 bg-background rounded-3xl p-8 shadow-xl mb-12 about2"
-                    style={{ top: isMobile ? mobileTops.card2 : undefined }}
+                    className="sticky lg:sticky lg:top-24 z-20 rounded-3xl p-8 shadow-xl mb-12 about2"
+                    style={{ top: isMobile ? mobileTops.card2 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background) 93%, white))" }}
                 >
                     <div className="hidden lg:block absolute -top-24 left-0" style={{ top: "6rem" }}></div>
 
@@ -123,13 +123,14 @@ export default function AboutSection() {
                         className="flex flex-col lg:flex-row-reverse gap-12 items-center mb-16"
                     >
                         <div className="w-full lg:flex-1">
-                            <h2 className="text-3xl font-bold mb-6 text-primary">Carmel College of Engineering and Technology</h2>
+                            <h2 className="text-3xl font-bold mb-6 text-primary heading-glow">Carmel College of Engineering and Technology</h2>
                             <div className="block lg:hidden w-full relative mb-8">
                                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl relative">
-                                    {/* Placeholder for About Image */}
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground opacity-50">
-                                        Conference Atmosphere Image
-                                    </div>
+                                    <img
+                                        src="/carmel.jpg"
+                                        alt="Carmel College"
+                                        className="w-full h-full object-cover"
+                                    />
                                 </div>
                                 <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl -z-10" />
                                 <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10" />
@@ -165,10 +166,11 @@ export default function AboutSection() {
 
                         <div className="hidden lg:block w-full lg:flex-1 relative">
                             <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl relative">
-                                {/* Placeholder for About Image */}
-                                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground opacity-50">
-                                    Conference Atmosphere Image
-                                </div>
+                                <img
+                                    src="/carmel.jpg"
+                                    alt="Carmel College"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl -z-10" />
                             <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10" />
@@ -178,8 +180,8 @@ export default function AboutSection() {
 
                 <div
                     ref={card3Ref}
-                    className="sticky lg:sticky lg:top-28 z-30 bg-background rounded-3xl p-8 shadow-xl mb-12 about3"
-                    style={{ top: isMobile ? mobileTops.card3 : undefined }}
+                    className="sticky lg:sticky lg:top-28 z-30 rounded-3xl p-8 shadow-xl mb-12 about3"
+                    style={{ top: isMobile ? mobileTops.card3 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background)93%, white))" }}
                 >
                     <div className="hidden lg:block absolute -top-28 left-0" style={{ top: "7rem" }}></div>
 
@@ -191,7 +193,7 @@ export default function AboutSection() {
                         className="flex flex-col lg:flex-row gap-12 items-center mb-16"
                     >
                         <div className="w-full lg:flex-1">
-                            <h2 className="text-3xl font-bold mb-6 text-primary">Department of Electrical and Electronics Engineering</h2>
+                            <h2 className="text-3xl font-bold mb-6 text-primary heading-glow">Department of Electrical and Electronics Engineering</h2>
                             <div className="block lg:hidden w-full relative mb-8">
                                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl relative">
                                     {/* Placeholder for About Image */}

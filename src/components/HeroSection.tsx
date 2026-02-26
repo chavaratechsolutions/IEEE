@@ -9,7 +9,7 @@ export default function HeroSection() {
     const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16">
+        <section className="relative min-h-[calc(100vh-40px)] flex items-center justify-center overflow-hidden bg-background pt-16">
             {/* Background Elements */}
             <motion.div
                 style={{ y: y1, opacity: 0.5 }}
@@ -19,6 +19,42 @@ export default function HeroSection() {
                 style={{ y: y2, opacity: 0.3 }}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl z-0"
             />
+
+            {/* Abstract Distorted Wireframe Wave Background (Top View) */}
+            <div
+                className="absolute inset-0 z-0 w-full h-full overflow-hidden pointer-events-none opacity-40 text-primary"
+                style={{
+                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 10%, transparent 60%)',
+                    maskImage: 'radial-gradient(ellipse at center, black 10%, transparent 60%)'
+                }}
+            >
+                <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="waveDistortion" x="-20%" y="-20%" width="140%" height="140%">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.003 0.005" numOctaves="1" result="noise" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="150" xChannelSelector="R" yChannelSelector="B" />
+                        </filter>
+                        <pattern id="wireframeGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+                            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1" />
+                        </pattern>
+                    </defs>
+                    <g filter="url(#waveDistortion)">
+                        <motion.g
+                            animate={{
+                                x: [0, -60],
+                                y: [0, -60],
+                            }}
+                            transition={{
+                                repeat: Infinity,
+                                ease: "linear",
+                                duration: 4,
+                            }}
+                        >
+                            <rect x="-20%" y="-20%" width="140%" height="140%" fill="url(#wireframeGrid)" />
+                        </motion.g>
+                    </g>
+                </svg>
+            </div>
 
             <div className="container mx-auto px-4 z-10 text-center">
                 <motion.div
@@ -38,11 +74,11 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 heading-glow-subtle"
                 >
                     {/* <span className="block text-xl md:text-2xl mb-4 text-primary font-extrabold tracking-widest">ICSEMII 2027</span> */}
                     IEEE International Conference on <br />
-                    <span className="text-gradient">Smart Energy, Mobility, and Intelligent Infrastructure</span>
+                    <span className="text-gradient [text-shadow:none]">Smart Energy, Mobility, and Intelligent Infrastructure</span>
                 </motion.h1>
 
                 <motion.p
@@ -75,7 +111,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-16 md:pb-0"
                 >
 
                     <a
@@ -95,11 +131,11 @@ export default function HeroSection() {
                     opacity: { delay: 1, duration: 1 },
                     y: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
                 }}
-                className="absolute bottom-20 left-1/2 -translate-x-1/2 text-muted-foreground"
+                className="absolute bottom-10 md:bottom-12 left-1/2 -translate-x-1/2 text-muted-foreground z-20"
             >
                 <div className="flex flex-col items-center gap-2">
-                    <span className="text-xs uppercase tracking-widest">Scroll Down</span>
-                    <ChevronDown className="w-5 h-5" />
+                    <span className="text-[8px] md:text-xs uppercase tracking-widest font-medium">Scroll Down</span>
+                    <ChevronDown className="w-3 h-3 md:w-5 md:h-5" />
                 </div>
             </motion.div>
         </section>

@@ -73,7 +73,7 @@ export default function ContactSection() {
                     className="text-center mb-16"
                 >
                     <span className="text-primary font-semibold mb-2 block">GET IN TOUCH</span>
-                    <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
+                    <h2 className="text-3xl font-bold mb-4 heading-glow">Contact Us</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
                         Have questions? We're here to help. Reach out to the organizing committee.
                     </p>
@@ -94,7 +94,7 @@ export default function ContactSection() {
                             <div>
                                 <h3 className="font-semibold mb-1">Email Us</h3>
                                 <p className="text-muted-foreground text-sm mb-2">General Inquiries</p>
-                                <a href="mailto:info@icscst2025.org" className="text-primary hover:underline">ieeesb@carmelcet.in</a>
+                                <a href="mailto:ieeesb@carmelcet.in" className="text-primary hover:underline">ieeesb@carmelcet.in</a>
                             </div>
                         </div>
 

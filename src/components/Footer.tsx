@@ -72,7 +72,7 @@ export default function Footer() {
                     <div className="flex gap-6">
                         <span className="flex items-center gap-2">
                             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                            Powered by IEEE
+                            Powered by Chavara TechSolutions
                         </span>
                     </div>
                 </div>

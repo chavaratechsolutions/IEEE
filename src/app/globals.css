@@ -94,6 +94,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.heading-glow {
+  text-shadow: 0 0 15px color-mix(in srgb, var(--primary) 40%, transparent),
+    0 0 30px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+.heading-glow-subtle {
+  text-shadow: 0 0 5px color-mix(in srgb, var(--primary) 20%, transparent),
+    0 0 10px color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
 /* Custom Utilities */
 .glass {
   background: var(--glass-bg);

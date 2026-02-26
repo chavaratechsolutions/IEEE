@@ -105,7 +105,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
                 className="mt-8 text-center"
             >
                 <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-yellow-400 tracking-wider">
-                    ICSCST 2025
+                    ICSEMII 2027
                 </h2>
                 <div className="mt-4 w-48 h-1 bg-gray-800 rounded-full overflow-hidden">
                     <motion.div

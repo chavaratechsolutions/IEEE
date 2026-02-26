@@ -17,7 +17,7 @@ export default function BrochureSection() {
                         className="lg:w-1/2"
                     >
                         <span className="text-primary font-semibold mb-2 block">RESOURCES</span>
-                        <h2 className="text-3xl font-bold mb-6">Conference Brochure</h2>
+                        <h2 className="text-3xl font-bold mb-6 heading-glow">Conference Brochure</h2>
                         {/* <p className="text-muted-foreground mb-8 text-lg">
                             Get all the details about the conference, including the full schedule, speaker bios, and workshop descriptions in our comprehensive brochure.
                         </p> */}
@@ -69,7 +69,7 @@ export default function BrochureSection() {
                                 <div className="w-16 h-16 bg-primary rounded-full mb-4 flex items-center justify-center text-white">
                                     <FileText className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">ICSCST 2025</h3>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">ICSEMII 2027</h3>
                                 <p className="text-sm text-gray-500">Conference Program</p>
                             </div>
                         </div>

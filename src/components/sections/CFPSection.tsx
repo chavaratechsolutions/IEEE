@@ -15,7 +15,7 @@ export default function CFPSection() {
                     className="max-w-3xl mx-auto text-center mb-16"
                 >
                     <span className="text-primary font-semibold mb-2 block">SUBMISSIONS</span>
-                    <h2 className="text-3xl font-bold mb-4">Call For Papers</h2>
+                    <h2 className="text-3xl font-bold mb-4 heading-glow">Call For Papers</h2>
                     <p className="text-muted-foreground mb-10 text-justify">
                         ICSEMI 2027 aspires to be a premier international forum for researchers, academicians, industry leaders, and practitioners to explore and exchange ideas on Smart Energy, Mobility, and Intelligent Infrastructure. The conference emphasizes innovation, sustainability, and resilience, fostering collaboration across disciplines to address global challenges and shape the future of intelligent systems. By bridging cutting-edge research with practical applications, ICSEMI 2027 seeks to inspire transformative solutions that advance sustainable societies and connected communities.                    </p>
                 </motion.div>
