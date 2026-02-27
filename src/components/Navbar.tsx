@@ -89,16 +89,27 @@ export default function Navbar() {
         <motion.nav
             layout
             transition={{ duration: 1, ease: "easeInOut" }}
+            style={
+                !isInitialLoading
+                    ? {
+                        backgroundColor: forceBelow
+                            ? (scrolled ? undefined : "rgba(255,255,255,0)")
+                            : "rgb(255,255,255)",
+                        transition: "background-color 0.8s ease, box-shadow 0.3s ease",
+                    }
+                    : undefined
+            }
             className={cn(
                 "sticky top-0 w-full flex flex-col z-50",
-                isInitialLoading ? "overflow-hidden h-[100dvh] justify-center bg-white"
+                isInitialLoading
+                    ? "overflow-hidden h-[100dvh] justify-center bg-white"
                     : cn(
-                        "overflow-visible h-auto transition-colors duration-300",
-                        isOverHero && !forceBelow
-                            ? cn("bg-white", scrolled ? "shadow-md py-4" : "py-4")
+                        "overflow-visible h-auto backdrop-blur-sm",
+                        !forceBelow
+                            ? cn(scrolled ? "shadow-md py-4" : "py-4")
                             : (scrolled
                                 ? "glass shadow-md py-4"
-                                : "bg-background/80 backdrop-blur-sm py-4 border-b border-transparent")
+                                : "py-4 border-b border-transparent")
                     )
             )}
         >
@@ -150,10 +161,14 @@ export default function Navbar() {
                                 style={{
                                     backgroundImage: isInitialLoading
                                         ? "linear-gradient(to right, #000 50%, #e2e8f0 50%)"
-                                        : (isOverHero && !forceBelow ? "linear-gradient(to right, #000 100%, #000 100%)" : "linear-gradient(to right, currentColor 100%, currentColor 100%)"),
-                                    backgroundSize: "200% 100%",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
+                                        : undefined,
+                                    backgroundSize: isInitialLoading ? "200% 100%" : undefined,
+                                    WebkitBackgroundClip: isInitialLoading ? "text" : undefined,
+                                    WebkitTextFillColor: isInitialLoading ? "transparent" : undefined,
+                                    color: !isInitialLoading
+                                        ? (forceBelow ? "var(--foreground)" : "#000")
+                                        : undefined,
+                                    transition: !isInitialLoading ? "color 0.8s ease" : undefined,
                                 }}
                                 animate={{
                                     backgroundPosition: isInitialLoading ? ["100% 0", "0% 0"] : "0% 0",
@@ -184,13 +199,19 @@ export default function Navbar() {
                         <a
                             key={item.name}
                             href={item.href}
+                            style={{
+                                color: activeSection === item.href.substring(1)
+                                    ? undefined
+                                    : (!forceBelow ? "#475569" : undefined),
+                                transition: "color 0.8s ease, background-color 0.2s ease",
+                            }}
                             className={cn(
-                                "px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 relative group",
+                                "px-3 py-2 text-sm font-medium rounded-md relative group",
                                 activeSection === item.href.substring(1)
                                     ? "text-primary bg-primary/10"
-                                    : (isOverHero && !forceBelow
-                                        ? "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50")
+                                    : (forceBelow
+                                        ? "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                                        : "hover:text-slate-900 hover:bg-slate-100")
                             )}
                         >
                             {item.name}
