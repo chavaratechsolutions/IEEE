@@ -1,22 +1,11 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
-
-// Import images
-import SarathImg from "@/img/sararth.jpg";
-import AnetImg from "@/img/anet.jpg";
-import SreedivyaImg from "@/img/sreedivya.jpg";
-import NishaImg from "@/img/nisha.jpg";
-import ShaniImg from "@/img/shani.jpg";
-import GeethuImg from "@/img/geethu.jpg";
-import ReethuImg from "@/img/reethu.jpg";
 
 interface CommitteeMember {
     name: string;
     designation: string;
     affiliation: string;
-    image: string | StaticImageData;
 }
 
 const committee = {
@@ -28,13 +17,13 @@ const committee = {
 export default function CommitteesSection() {
     // Combine all committee members into a single array
     const allMembers: CommitteeMember[] = [
-        { name: "Dr. Sarath K S", designation: "General Chair", affiliation: "Associate Professor", image: SarathImg },
-        { name: "Ms. Anet Jose", designation: "Co-General Chair", affiliation: "Assistant Professor", image: AnetImg },
-        { name: "Dr. Sreedivya K M", designation: "TPC Chair", affiliation: "Associate Professor", image: SreedivyaImg },
-        { name: "Dr. Nisha R", designation: "Publication Chair", affiliation: "Assistant Professor", image: NishaImg },
-        { name: "Ms. Reethu Dhanya", designation: "Publication Chair", affiliation: "Assistant Professor", image: ReethuImg },
-        { name: "Ms. Shani S J", designation: "Publicity Chair", affiliation: "Assistant Professor", image: ShaniImg },
-        { name: "Ms. Geethu Krishnan", designation: "Finance Committee Chair", affiliation: "Assistant Professor", image: GeethuImg },
+        { name: "Dr. Sarath K S", designation: "General Chair", affiliation: "Associate Professor" },
+        { name: "Ms. Anet Jose", designation: "Co-General Chair", affiliation: "Assistant Professor" },
+        { name: "Dr. Sreedivya K M", designation: "TPC Chair", affiliation: "Associate Professor" },
+        { name: "Dr. Nisha R", designation: "Publication Chair", affiliation: "Assistant Professor" },
+        { name: "Ms. Reethu Dhanya", designation: "Publication Chair", affiliation: "Assistant Professor" },
+        { name: "Ms. Shani S J", designation: "Publicity Chair", affiliation: "Assistant Professor" },
+        { name: "Ms. Geethu Krishnan", designation: "Finance Committee Chair", affiliation: "Assistant Professor" },
     ];
 
     return (
@@ -65,17 +54,7 @@ export default function CommitteesSection() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all group border border-border w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
                         >
-                            <div className="relative aspect-square overflow-hidden">
-                                <Image
-                                    src={member.image}
-                                    alt={member.name}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            </div>
-
-                            <div className="p-4 text-center relative">
+                            <div className="p-6 text-center relative flex flex-col justify-center h-full min-h-[140px]">
                                 <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">{member.name}</h3>
                                 <p className="text-sm font-medium text-primary mb-1">{member.designation}</p>
                                 <p className="text-xs text-muted-foreground">{member.affiliation}</p>

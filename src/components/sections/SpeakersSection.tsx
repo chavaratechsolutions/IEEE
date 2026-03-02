@@ -1,13 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import AmachiImg from "@/img/amachi.jpg";
+import BijuImg from "@/img/name.jpg";
+import JaisonImg from "@/img/jison.jpg";
+import RageshImg from "@/img/rakesh.jpg";
 
-const speakers = [
-    { name: "aaaa", role: "aaaaa", org: "aaaa", image: "/placeholder-speaker-1.jpg" },
-    { name: "bbbb", role: "bbbb", org: "aaaaa", image: "/placeholder-speaker-2.jpg" },
-    { name: "cccc", role: "ccccc", org: "aaa", image: "/placeholder-speaker-3.jpg" },
-    { name: "dddd", role: "ddddd", org: "aaaaa", image: "/placeholder-speaker-4.jpg" },
+
+type Speaker = {
+    name: string;
+    role: string;
+    org: string;
+    image: string | StaticImageData;
+};
+
+const speakers: Speaker[] = [
+    { name: "Dr. Jirawadee Polprasert", role: "Assistant Dean for Continuing Study and Venture BuilderFaculty of Engineering ", org: "Naresuan University Phitsanulok, Thailand", image: AmachiImg },
+    { name: "Dr. Biju K", role: "Assistant Professor & HoD EEE", org: "Government Engineering College, Munnar", image: BijuImg },
+    { name: "Dr. Jaison Mathew", role: "Professor (HoD,EEE)", org: "Government Engineering College, Thrissur", image: JaisonImg },
+    { name: "Dr Ragesh G K", role: "Assistant Professor", org: "Indian Institute of Information Technology Kottayam", image: RageshImg },
 ];
 
 export default function SpeakersSection() {
@@ -41,7 +53,7 @@ export default function SpeakersSection() {
                         >
                             <div className="relative aspect-square overflow-hidden">
                                 {/* Using standard img as placeholders are local paths, similar logic to next/image over a colored div */}
-                                {speaker.image.startsWith('/') ? (
+                                {typeof speaker.image === 'string' && speaker.image.startsWith('/') ? (
                                     <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center text-4xl font-bold text-muted-foreground transition-transform duration-500 group-hover:scale-110">
                                         {speaker.name.split(' ').map(n => n[0]).join('')}
                                     </div>
