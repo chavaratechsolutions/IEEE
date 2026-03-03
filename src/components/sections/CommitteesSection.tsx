@@ -20,8 +20,12 @@ export default function CommitteesSection() {
         { name: "Dr. Sarath K S", designation: "General Chair", affiliation: "Associate Professor" },
         { name: "Ms. Anet Jose", designation: "Co-General Chair", affiliation: "Assistant Professor" },
         { name: "Dr. Sreedivya K M", designation: "TPC Chair", affiliation: "Associate Professor" },
+        { name: "Dr. SYAMALA S", designation: "TCP Chair", affiliation: "Assistant Professor, IIIT Kottayam" },
+        { name: "Dr Ragesh G K", designation: "TCP Chair", affiliation: "Assistant Professor, IIIT Kottayam" },
         { name: "Dr. Nisha R", designation: "Publication Chair", affiliation: "Assistant Professor" },
         { name: "Ms. Reethu Dhanya", designation: "Publication Chair", affiliation: "Assistant Professor" },
+        { name: "Dr. Parvathy A K", designation: "Publication Chair", affiliation: "Professor, VIT Chennai" },
+        { name: "Dr. Rahul Satheesh", designation: "Publication Chair", affiliation: "Assistant Professor (Sr. Gd.), School of Artificial Intelligence, Center for Computational Engineering and Networking (CEN), Amrita Vishwa Vidyapeetham, Coimbatore" },
         { name: "Ms. Shani S J", designation: "Publicity Chair", affiliation: "Assistant Professor" },
         { name: "Ms. Geethu Krishnan", designation: "Finance Committee Chair", affiliation: "Assistant Professor" },
     ];

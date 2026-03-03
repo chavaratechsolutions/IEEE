@@ -166,7 +166,7 @@ export default function ContactSection() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     className="w-full px-3 py-2 border border-input rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-primary/50"
-                                    placeholder="example@example.com"
+                                    placeholder="enter your email"
                                     required
                                 />
                             </div>
