@@ -82,7 +82,7 @@ export default function AboutSection() {
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 className="text-muted-foreground mb-4 leading-relaxed"
                             >
-                                The IEEE International Conference on Smart Energy, Mobility, and Intelligent Infrastructure (ICSEMII) serves as an interdisciplinary platform focused on developing sustainable and intelligent technological systems. It brings together researchers, academicians, industry professionals, and practitioners to address emerging challenges in future infrastructure and mobility. The conference emphasizes advancements in smart energy systems, including renewable integration, smart grids, energy storage, and efficient power management. It promotes research that enhances energy reliability, efficiency, and environmental sustainability.
+                                The IEEE International Conference on Smart Energy, Mobility, and Intelligent Infrastructure (ICSEMI) serves as an interdisciplinary platform focused on developing sustainable and intelligent technological systems. It brings together researchers, academicians, industry professionals, and practitioners to address emerging challenges in future infrastructure and mobility. The conference emphasizes advancements in smart energy systems, including renewable integration, smart grids, energy storage, and efficient power management. It promotes research that enhances energy reliability, efficiency, and environmental sustainability.
                             </motion.p>
                             <motion.p
                                 initial={{ opacity: 0, x: -20 }}
@@ -91,7 +91,7 @@ export default function AboutSection() {
                                 transition={{ duration: 0.6, delay: 0.4 }}
                                 className="text-muted-foreground mb-4 leading-relaxed"
                             >
-                                ICSEMII also highlights intelligent mobility solutions such as electric vehicles, autonomous transportation, connected systems, and traffic optimization technologies. It explores the role of sensing, embedded systems, control engineering, and artificial intelligence in transforming transportation systems. The theme of intelligent infrastructure covers smart cities, cyber-physical systems, industrial automation, IoT-based monitoring, and resilient urban development. The conference underscores the importance of digital control, communication technologies, and predictive system management.
+                                ICSEMI also highlights intelligent mobility solutions such as electric vehicles, autonomous transportation, connected systems, and traffic optimization technologies. It explores the role of sensing, embedded systems, control engineering, and artificial intelligence in transforming transportation systems. The theme of intelligent infrastructure covers smart cities, cyber-physical systems, industrial automation, IoT-based monitoring, and resilient urban development. The conference underscores the importance of digital control, communication technologies, and predictive system management.
                             </motion.p>
                             <motion.p
                                 initial={{ opacity: 0, x: -20 }}
@@ -100,7 +100,7 @@ export default function AboutSection() {
                                 transition={{ duration: 0.6, delay: 0.6 }}
                                 className="text-muted-foreground mb-4 leading-relaxed"
                             >
-                                It encourages interdisciplinary collaboration among EEE, E&I, ECE, CSE, and Mechanical Engineering to develop integrated engineering solutions. Overall, ICSEMII provides a forum for knowledge exchange, innovation, and collaborative research aimed at building energy-efficient, intelligent, and sustainable systems for future societies.
+                                It encourages interdisciplinary collaboration among EEE, E&I, ECE, CSE, and Mechanical Engineering to develop integrated engineering solutions. Overall, ICSEMI provides a forum for knowledge exchange, innovation, and collaborative research aimed at building energy-efficient, intelligent, and sustainable systems for future societies.
                             </motion.p>
                         </div>
 
@@ -196,10 +196,11 @@ export default function AboutSection() {
                             <h2 className="text-3xl font-bold mb-6 text-primary heading-glow">Department of Electrical and Electronics Engineering</h2>
                             <div className="block lg:hidden w-full relative mb-8">
                                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl relative">
-                                    {/* Placeholder for About Image */}
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground opacity-50">
-                                        Conference Atmosphere Image
-                                    </div>
+                                    <img
+                                        src="/EEE.jpg"
+                                        alt="EEE Department"
+                                        className="w-full h-full object-cover"
+                                    />
                                 </div>
                                 <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl -z-10" />
                                 <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10" />
@@ -226,10 +227,11 @@ export default function AboutSection() {
 
                         <div className="hidden lg:block w-full lg:flex-1 relative">
                             <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl relative">
-                                {/* Placeholder for About Image */}
-                                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground opacity-50">
-                                    Conference Atmosphere Image
-                                </div>
+                                <img
+                                    src="/EEE.jpg"
+                                    alt="EEE Department"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl -z-10" />
                             <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10" />
