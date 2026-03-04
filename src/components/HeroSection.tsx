@@ -74,10 +74,10 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 heading-glow-subtle"
+                    className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 heading-glow-subtle leading-tight"
                 >
                     {/* <span className="block text-xl md:text-2xl mb-4 text-primary font-extrabold tracking-widest">ICSEMII 2027</span> */}
-                    IEEE International Conference on <br />
+                    IEEE International Conference on <br className="hidden sm:block" />
                     <span className="text-gradient [text-shadow:none]">Smart Energy, Mobility, and Intelligent Infrastructure</span>
                 </motion.h1>
 
@@ -85,7 +85,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
+                    className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 px-2"
                 >
                     Innovating at the IEEE International Conference on Smart Energy, Mobility, and Intelligent Infrastructure for a more sustainable future.
                 </motion.p>
@@ -94,16 +94,18 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-10"
                 >
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                        <Calendar className="w-5 h-5 text-primary" />
-                        <span>25-26 March, 2027</span>
+                    <div className="flex items-center justify-center gap-2 text-muted-foreground w-full sm:w-auto">
+                        <Calendar className="w-5 h-5 shrink-0 text-primary" />
+                        <span className="text-sm sm:text-base">25-26 March, 2027</span>
                     </div>
                     <div className="hidden sm:block w-px h-6 bg-border" />
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                        <MapPin className="w-5 h-5 text-primary" />
-                        <span>Carmel College of Engineering and Technology, Alappuzha, Kerala</span>
+                    <div className="flex items-start justify-center gap-2 text-muted-foreground w-full sm:w-auto px-4 sm:px-0">
+                        <MapPin className="w-5 h-5 shrink-0 text-primary mt-0.5" />
+                        <span className="text-sm sm:text-base text-center sm:text-left max-w-[280px] sm:max-w-none">
+                            Carmel College of Engineering and Technology, Alappuzha, Kerala
+                        </span>
                     </div>
                 </motion.div>
 
