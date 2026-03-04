@@ -180,7 +180,7 @@ export default function Navbar() {
                                         ? "text-[8.5vw]"
                                         : cn("text-2xl scale-100", isOverHero ? "" : "")
                                 )}>
-                                ICSEMII 2027
+                                ICSEMI 2027
                             </motion.span>
                         </motion.div>
                     </Link>
