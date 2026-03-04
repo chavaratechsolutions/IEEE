@@ -17,17 +17,17 @@ const committee = {
 export default function CommitteesSection() {
     // Combine all committee members into a single array
     const allMembers: CommitteeMember[] = [
-        { name: "Dr. Sarath K S", designation: "General Chair", affiliation: "Associate Professor" },
-        { name: "Ms. Anet Jose", designation: "Co-General Chair", affiliation: "Assistant Professor" },
-        { name: "Dr. Sreedivya K M", designation: "TPC Chair", affiliation: "Associate Professor" },
-        { name: "Dr. SYAMALA S", designation: "TCP Chair", affiliation: "Assistant Professor, IIIT Kottayam" },
+        { name: "Dr. Sarath K S", designation: "General Chair", affiliation: "Associate Professor, CCET" },
+        { name: "Ms. Anet Jose", designation: "Co-General Chair", affiliation: "Assistant Professor, CCET" },
+        { name: "Dr. Sreedivya K M", designation: "TPC Chair", affiliation: "Associate Professor, CCET" },
+        { name: "Dr. Syamala S", designation: "TCP Chair", affiliation: "Assistant Professor, IIIT Kottayam" },
         { name: "Dr Ragesh G K", designation: "TCP Chair", affiliation: "Assistant Professor, IIIT Kottayam" },
-        { name: "Dr. Nisha R", designation: "Publication Chair", affiliation: "Assistant Professor" },
-        { name: "Ms. Reethu Dhanya", designation: "Publication Chair", affiliation: "Assistant Professor" },
+        { name: "Dr. Nisha R", designation: "Publication Chair", affiliation: "Assistant Professor, CCET" },
+        { name: "Ms. Reethu Dhanya", designation: "Publication Chair", affiliation: "Assistant Professor, CCET" },
         { name: "Dr. Parvathy A K", designation: "Publication Chair", affiliation: "Professor, VIT Chennai" },
-        { name: "Dr. Rahul Satheesh", designation: "Publication Chair", affiliation: "Assistant Professor (Sr. Gd.), School of Artificial Intelligence, Center for Computational Engineering and Networking (CEN), Amrita Vishwa Vidyapeetham, Coimbatore" },
-        { name: "Ms. Shani S J", designation: "Publicity Chair", affiliation: "Assistant Professor" },
-        { name: "Ms. Geethu Krishnan", designation: "Finance Committee Chair", affiliation: "Assistant Professor" },
+        { name: "Dr. Rahul Satheesh", designation: "Publication Chair", affiliation: "Assistant Professor, Amrita Vishwa Vidyapeetham, Coimbatore" },
+        { name: "Ms. Shani S J", designation: "Publicity Chair", affiliation: "Assistant Professor, CCET" },
+        { name: "Ms. Geethu Krishnan", designation: "Finance Committee Chair", affiliation: "Assistant Professor, CCET" },
     ];
 
     return (
@@ -58,10 +58,10 @@ export default function CommitteesSection() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all group border border-border w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
                         >
-                            <div className="p-6 text-center relative flex flex-col justify-center h-full min-h-[140px]">
-                                <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">{member.name}</h3>
-                                <p className="text-sm font-medium text-primary mb-1">{member.designation}</p>
-                                <p className="text-xs text-muted-foreground">{member.affiliation}</p>
+                            <div className="p-4 text-center relative flex flex-col justify-center h-full min-h-[140px]">
+                                <h3 className="text-base sm:text-lg font-bold mb-1 group-hover:text-primary transition-colors leading-tight">{member.name}</h3>
+                                <p className="text-xs sm:text-sm font-medium text-primary mb-1">{member.designation}</p>
+                                <p className="text-[10px] sm:text-xs text-muted-foreground leading-tight">{member.affiliation}</p>
                             </div>
                         </motion.div>
                     ))}
