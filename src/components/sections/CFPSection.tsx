@@ -21,53 +21,64 @@ export default function CFPSection() {
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 gap-8 mb-12">
-                    {([
+                    {[
                         {
                             title: "Topics of Interest",
                             content: (
-                                <>
-                                    <p className="mb-4">ICSEMI 2027 invites original, unpublished research contributions in (but not limited to) the following thematic tracks:</p>
-                                    <ul className="list-disc list-inside space-y-2 text-left">
-                                        <li>Electric vehicles, power electronics, and energy storage (EEE)</li>
-                                        <li>Instrumentation for energy and mobility systems (E&I)</li>
-                                        <li>Embedded control systems (ECE)</li>
-                                        <li>AI-based traffic management and optimization (CSE)</li>
-                                        <li>Thermal systems, vehicle dynamics, and smart materials (ME)</li>
-                                    </ul>
-                                </>
+                                <div className="space-y-6">
+                                    <p className="text-muted-foreground">ICSEMI 2027 invites original, unpublished research contributions in the following thematic tracks:</p>
+                                    <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-left">
+                                        {[
+                                            "Electric Vehicles, Power Electronics, and Energy Storage (EEE)",
+                                            "Instrumentation for Energy and Mobility Systems (E&I)",
+                                            "Embedded Control Systems (ECE)",
+                                            "AI, Machine Learning, and Data Science (CSE)",
+                                            "Thermal Systems and Vehicle Dynamics (ME)"
+                                        ].map((track, i) => (
+                                            <div key={i} className="flex items-start gap-2 group/track">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0 group-hover/track:scale-125 transition-transform" />
+                                                <span className="text-sm font-medium text-foreground/80 group-hover/track:text-primary transition-colors">{track}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             )
                         },
                         {
                             title: "Manuscript / Submission Guidelines",
                             content: (
-                                <ul className="list-disc list-inside space-y-2 text-left">
-                                    <li>Original and unpublished papers in the prescribed conference format (maximum 6 pages; up to 8 pages permitted with additional charges) are to be submitted through:</li>
-                                    <li>All submissions will undergo plagiarism check using standard plagiarism detection tools.</li>
-                                    <li>Accepted and presented papers will be submitted for inclusion into IEEE Xplore Digital Library subject to meeting IEEE Xplore&apos;s scope and quality requirements.</li>
+                                <ul className="space-y-4 text-left">
+                                    {[
+                                        "Original and unpublished papers in the prescribed conference format (maximum 6 pages) are to be submitted.",
+                                        "All submissions will undergo plagiarism check using standard plagiarism detection tools.",
+                                        "Accepted and presented papers will be submitted for inclusion into IEEE Xplore Digital Library subject to meeting IEEE Xplore's requirements."
+                                    ].map((guideline, i) => (
+                                        <li key={i} className="flex items-start gap-3 group/item">
+                                            <div className="w-5 h-5 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-[10px] font-bold text-primary mt-0.5 shrink-0 group-hover/item:bg-primary group-hover/item:text-white transition-colors">
+                                                {i + 1}
+                                            </div>
+                                            <span className="text-sm leading-relaxed">{guideline}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             )
-                        },
-                        //  { title: "Poster Sessions", desc: "Work-in-progress and late-breaking results" }
-                    ] as any[]).map((item, index) => (
+                        }
+                    ].map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="p-8 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors group cursor-pointer shadow-sm hover:shadow-md"
+                            className="p-8 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all group shadow-sm hover:shadow-xl hover:-translate-y-1"
                         >
-                            <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
-                            {item.content ? (
-                                <div className="text-sm text-muted-foreground mb-4">
-                                    {item.content}
-                                </div>
-                            ) : (
-                                <p className="text-sm text-muted-foreground mb-4">
-                                    Submit your {item.desc.toLowerCase()} for review by our expert panel.
-                                </p>
-                            )}
-                            <div className="h-1 w-12 bg-border group-hover:bg-primary transition-all" />
+                            <h3 className="text-xl font-bold mb-6 group-hover:text-primary transition-colors flex items-center gap-2">
+                                <div className="w-1 h-6 bg-primary rounded-full" />
+                                {item.title}
+                            </h3>
+                            <div className="text-sm text-muted-foreground">
+                                {item.content}
+                            </div>
                         </motion.div>
                     ))}
                 </div>
