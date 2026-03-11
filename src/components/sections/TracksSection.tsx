@@ -1,57 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Settings, Brain, CheckCircle2, Activity, Cpu } from "lucide-react";
+import { Zap, Settings, Brain, CheckCircle2 } from "lucide-react";
 
 const tracks = [
     {
         icon: Zap,
-        title: "Electric Vehicles, Power Electronics, and Energy Storage (EEE)",
+        title: "Smart Energy Systems and Embedded Technologies",
         points: [
-            "Electric and hybrid propulsion technologies",
-            "Battery management systems and advanced energy storage",
-            "Power converters, inverters, and grid integration",
-            "Charging infrastructure and smart energy distribution"
-        ]
-    },
-    {
-        icon: Activity,
-        title: "Instrumentation for Energy and Mobility Systems (E&I)",
-        points: [
-            "Sensors and measurement systems for vehicles and energy grids",
-            "Condition monitoring and diagnostics for mobility systems",
-            "IoT-based instrumentation for smart mobility",
-            "Reliability, calibration, and standards in instrumentation"
-        ]
-    },
-    {
-        icon: Cpu,
-        title: "Embedded Control Systems (ECE)",
-        points: [
-            "Embedded controllers for automotive and industrial applications",
-            "Real-time operating systems and hardware-software co-design",
-            "IoT-enabled embedded systems for energy efficiency",
-            "Cybersecurity and resilience in embedded mobility systems"
-        ]
-    },
-    {
-        icon: Brain,
-        title: "AI, Machine Learning, and Data Science for Smart Systems (CSE)",
-        points: [
-            "AI-driven traffic management and optimization",
-            "Machine learning for predictive maintenance and safety",
-            "Data science applications in intelligent transportation and smart cities",
-            "Digital twins, simulation, and decision support systems"
+            "Electric vehicles and hybrid propulsion systems",
+            "Advanced power electronics for energy conversion and storage",
+            "Embedded controllers for mobility and energy systems",
+            "IoT-enabled instrumentation and monitoring for sustainable mobility"
         ]
     },
     {
         icon: Settings,
-        title: "Thermal Systems, Vehicle Dynamics, and Smart Materials (ME)",
+        title: "Thermal Systems, Vehicle Dynamics, and Smart Materials",
         points: [
             "Thermal management in electric and hybrid vehicles",
-            "Vehicle dynamics, control, and performance optimization",
+            "Vehicle dynamics and performance optimization",
             "Smart materials for lightweight and efficient mobility solutions",
-            "Modelling and simulation of mechanical systems for energy efficiency"
+            "Simulation and modelling of mechanical systems for energy efficiency"
+        ]
+    },
+    {
+        icon: Brain,
+        title: "AI, Machine Learning, and Data Science for Smart Systems",
+        points: [
+            "AI-driven traffic management and optimization",
+            "Machine learning for predictive mobility and safety",
+            "Data science applications in intelligent transportation and smart cities",
+            "Digital twins and simulation for smart infrastructure"
         ]
     }
 ];
@@ -74,7 +54,7 @@ export default function TracksSection() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid lg:grid-cols-3 gap-8">
                     {tracks.map((track, index) => (
                         <motion.div
                             key={index}

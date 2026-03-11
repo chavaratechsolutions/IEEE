@@ -50,7 +50,7 @@ export default function Home() {
           <SpeakersSection />
           <CommitteesSection />
           <VenueSection />
-          <BrochureSection />
+          {/* <BrochureSection /> */}
           <CountdownWrapper />
           <ContactSection />
 

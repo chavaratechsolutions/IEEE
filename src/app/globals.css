@@ -1,34 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  /* IEEE Brand Colors — Dark Theme (Default) */
-  --background: #020617;
-  --foreground: #f8fafc;
+  /* IEEE Brand Colors — Light Theme */
+  --background: #ffffff;
+  --foreground: #0f172a;
 
-  --primary: #38bdf8;
-  /* Lighter blue for dark mode */
-  --primary-foreground: #020617;
+  --primary: #0284c7;
+  --primary-foreground: #ffffff;
 
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
 
-  --accent: #fb923c;
-  --accent-foreground: #020617;
+  --accent: #ea580c;
+  --accent-foreground: #ffffff;
 
-  --muted: #0f172a;
-  --muted-foreground: #94a3b8;
+  --muted: #f8fafc;
+  --muted-foreground: #111827;
 
-  --card: #0f172a;
-  --card-foreground: #f8fafc;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
 
-  --border: #1e293b;
-  --input: #1e293b;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
 
   --radius: 0.5rem;
 
   /* Glassmorphism variables */
-  --glass-bg: rgba(2, 6, 23, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -65,13 +64,11 @@ body {
 }
 
 .heading-glow {
-  text-shadow: 0 0 15px color-mix(in srgb, var(--primary) 40%, transparent),
-    0 0 30px color-mix(in srgb, var(--primary) 20%, transparent);
+  text-shadow: none;
 }
 
 .heading-glow-subtle {
-  text-shadow: 0 0 5px color-mix(in srgb, var(--primary) 20%, transparent),
-    0 0 10px color-mix(in srgb, var(--primary) 10%, transparent);
+  text-shadow: none;
 }
 
 /* Custom Utilities */
@@ -91,4 +88,15 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Hero section grid animation — GPU-composited via transform */
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(60px, 60px);
+  }
 }

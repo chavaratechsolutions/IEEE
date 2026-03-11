@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
         const mailOptions = {
             from: process.env.EMAIL_USER, // sender address (must be the same as auth user)
-            to: 'chavaratechsolutions@gmail.com', // list of receivers
+            to: 'ieeesb@carmelcet.in', // list of receivers
             replyTo: email,
             subject: `[ICSEMII Contact Form] ${subject || 'No Subject'}`,
             text: `

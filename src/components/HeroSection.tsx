@@ -1,59 +1,31 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Calendar, MapPin, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { Calendar, MapPin, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
-    const { scrollY } = useScroll();
-    const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-    const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-
     return (
-        <section className="relative min-h-[calc(100vh-40px)] flex items-center justify-center overflow-hidden bg-background pt-16">
-            {/* Background Elements */}
-            <motion.div
-                style={{ y: y1, opacity: 0.5 }}
-                className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background z-0"
-            />
-            <motion.div
-                style={{ y: y2, opacity: 0.3 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl z-0"
-            />
+        <section className="relative h-[calc(100dvh-4.5rem)] flex items-center justify-center overflow-hidden bg-background">
 
-            {/* Abstract Distorted Wireframe Wave Background (Top View) */}
+            {/* Subtle static glow blob */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/8 rounded-full blur-3xl z-0 pointer-events-none" />
+
+            {/* Pure CSS animated grid — GPU-composited via transform, no SVG filter cost */}
             <div
-                className="absolute inset-0 z-0 w-full h-full overflow-hidden pointer-events-none opacity-40 text-primary"
+                className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
                 style={{
-                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 10%, transparent 60%)',
-                    maskImage: 'radial-gradient(ellipse at center, black 10%, transparent 60%)'
+                    maskImage: 'radial-gradient(ellipse at center, black 20%, transparent 70%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 20%, transparent 70%)',
                 }}
             >
-                <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <filter id="waveDistortion" x="-20%" y="-20%" width="140%" height="140%">
-                            <feTurbulence type="fractalNoise" baseFrequency="0.003 0.005" numOctaves="1" result="noise" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="150" xChannelSelector="R" yChannelSelector="B" />
-                        </filter>
-                        <pattern id="wireframeGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-                            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1" />
-                        </pattern>
-                    </defs>
-                    <g filter="url(#waveDistortion)">
-                        <motion.g
-                            animate={{
-                                x: [0, -60],
-                                y: [0, -60],
-                            }}
-                            transition={{
-                                repeat: Infinity,
-                                ease: "linear",
-                                duration: 4,
-                            }}
-                        >
-                            <rect x="-20%" y="-20%" width="140%" height="140%" fill="url(#wireframeGrid)" />
-                        </motion.g>
-                    </g>
-                </svg>
+                <div
+                    className="absolute w-[200%] h-[200%] -top-1/2 -left-1/2 opacity-[0.12]"
+                    style={{
+                        backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
+                        backgroundSize: '60px 60px',
+                        animation: 'gridMove 8s linear infinite',
+                    }}
+                />
             </div>
 
             <div className="container mx-auto px-4 z-10 text-center">
@@ -118,7 +90,7 @@ export default function HeroSection() {
 
                     <a
                         href="#cfp"
-                        className="px-8 py-4 bg-background border border-input text-foreground font-semibold rounded-full hover:bg-muted/50 transition-all hover:-translate-y-1 active:scale-95"
+                        className="px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-all hover:-translate-y-1 active:scale-95 shadow-md"
                     >
                         Call for Paper
                     </a>

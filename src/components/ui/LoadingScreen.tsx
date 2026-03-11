@@ -32,13 +32,13 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-[100] bg-slate-950 flex flex-col items-center justify-center overflow-hidden"
+            className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center overflow-hidden"
         >
             {/* Ambient Background Glow */}
             <motion.div
                 animate={{ opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="absolute inset-0 bg-blue-900/20 radial-gradient"
+                className="absolute inset-0 bg-sky-100/60 radial-gradient"
             />
 
             <div className="relative w-64 h-64 flex items-center justify-center">
@@ -107,7 +107,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
                 <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-yellow-400 tracking-wider">
                     ICSEMII 2027
                 </h2>
-                <div className="mt-4 w-48 h-1 bg-gray-800 rounded-full overflow-hidden">
+                <div className="mt-4 w-48 h-1 bg-gray-200 rounded-full overflow-hidden">
                     <motion.div
                         className="h-full bg-gradient-to-r from-primary to-yellow-400"
                         style={{ width: `${progress}%` }}

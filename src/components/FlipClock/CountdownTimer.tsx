@@ -23,10 +23,14 @@ const calculateTotalTimeLeft = () => {
 }
 
 const CountdownTimer: React.FC = () => {
-    // Since we are using ssr: false, we can safely initialize with the current time
-    const [timeLeft, setTimeLeft] = useState(calculateTotalTimeLeft());
+    // Initialize with zeros to prevent hydration mismatch (SSR vs client time differs)
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
+        setTimeLeft(calculateTotalTimeLeft());
+
         const timer = setInterval(() => {
             setTimeLeft(calculateTotalTimeLeft());
         }, 1000);

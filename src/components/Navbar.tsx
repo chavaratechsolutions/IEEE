@@ -44,8 +44,12 @@ export default function Navbar() {
             setForceBelow(true);
         }, 3300);
 
-        // Run once on mount
-        setIsOverHero(window.scrollY < window.innerHeight - 80);
+        // Run once on mount — wrapped in timeout to avoid hydration mismatch
+        const initScroll = () => {
+            setScrolled(window.scrollY > 20);
+            setIsOverHero(window.scrollY < window.innerHeight - 80);
+        };
+        initScroll();
 
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
@@ -65,7 +69,7 @@ export default function Navbar() {
             }
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => {
             window.removeEventListener("scroll", handleScroll);
             clearTimeout(timer);
@@ -88,6 +92,7 @@ export default function Navbar() {
     return (
         <motion.nav
             layout
+            suppressHydrationWarning
             transition={{ duration: 1, ease: "easeInOut" }}
             style={
                 !isInitialLoading

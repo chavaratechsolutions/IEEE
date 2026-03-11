@@ -55,8 +55,9 @@ export default function AboutSection() {
             <div className="container mx-auto px-4">
                 <div
                     ref={card1Ref}
+                    suppressHydrationWarning
                     className="sticky lg:sticky lg:top-20 z-10 rounded-3xl p-8 shadow-xl mb-12 about"
-                    style={{ top: isMobile ? mobileTops.card1 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background) 93%, white))" }}
+                    style={{ top: isMobile ? mobileTops.card1 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background) 93%, white))", willChange: "transform" }}
                 >
                     <div className="hidden lg:block absolute -top-20 left-0" style={{ top: "5rem" }}></div> {/* Desktop sticky offset anchor if needed, but using class is better */}
                     {/* Note: Desktop uses lg:top-20 class. On mobile we override with inline style. 
@@ -73,7 +74,7 @@ export default function AboutSection() {
                         className="flex flex-col lg:flex-row gap-12 items-center mb-16"
                     >
                         <div className="w-full lg:flex-1">
-                            <h2 className="text-3xl font-bold mb-6 text-white text-center heading-glow">About the Conference</h2>
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground text-center heading-glow">About the Conference</h2>
 
                             <motion.p
                                 initial={{ opacity: 0, x: -20 }}
@@ -110,8 +111,9 @@ export default function AboutSection() {
 
                 <div
                     ref={card2Ref}
+                    suppressHydrationWarning
                     className="sticky lg:sticky lg:top-24 z-20 rounded-3xl p-8 shadow-xl mb-12 about2"
-                    style={{ top: isMobile ? mobileTops.card2 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background) 93%, white))" }}
+                    style={{ top: isMobile ? mobileTops.card2 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background) 93%, white))", willChange: "transform" }}
                 >
                     <div className="hidden lg:block absolute -top-24 left-0" style={{ top: "6rem" }}></div>
 
@@ -142,25 +144,7 @@ export default function AboutSection() {
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 className="text-muted-foreground mb-4 leading-relaxed"
                             >
-                                Carmel College of Engineering & Technology (CCET), located in Punnapra, Alappuzha, stands as a beacon of quality education and innovation in the field of engineering and technology. Owned and managed by St. Joseph’s Carmel Educational & Charitable Trust of CMI, the institution was established in the academic year 2014-15 with a mission to make engineering education accessible to students from all social backgrounds. The trust, which was registered on 13-09-2012, is dedicated to fostering academic excellence and holistic development.
-                            </motion.p>
-                            <motion.p
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.4 }}
-                                className="text-muted-foreground mb-4 leading-relaxed"
-                            >
-                                CCET is a self-financing institution, approved by the All India Council for Technical Education (AICTE) and affiliated to APJ Abdul Kalam Technological University, Kerala. This affiliation ensures that the curriculum is contemporary and in alignment with industry standards, thereby enhancing the employability of its graduates.
-                            </motion.p>
-                            <motion.p
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.6 }}
-                                className="text-muted-foreground mb-4 leading-relaxed"
-                            >
-                                At CCET, students can pursue 4-year Bachelor of Technology (B.Tech) degree programs in four major disciplines: Civil Engineering, Mechanical Engineering, Electrical and Electronics Engineering, and Computer Science and Engineering. Each program is designed to equip students with the theoretical knowledge and practical skills needed to excel in their chosen fields. The college boasts state-of-the-art laboratories, a well-stocked library, and modern classrooms, all of which contribute to a conducive learning environment.
+                                Carmel College of Engineering & Technology (CCET), Punnapra, Alappuzha, established in 2014 under St. Joseph’s Carmel Educational & Charitable Trust of CMI, is a self-financing institution approved by AICTE and affiliated to APJ Abdul Kalam Technological University, Kerala. Offering B.Tech programs in Civil, Mechanical, Electrical & Electronics, and Computer Science Engineering, CCET provides modern infrastructure, advanced labs, and a strong academic environment. The Department of Electrical and Electronics Engineering was started in 2014 with an intake of 60 students and is affiliated with APJ Abdul Kalam Technological University, Kerala. From the beginning, the department has focused on providing quality education and practical learning experiences to help students build a strong foundation in engineering. The faculty team is highly qualified and experienced, with 25% holding Ph.D. degrees and 50% currently pursuing their doctoral studies. This creates a strong academic environment that supports both learning and research. The curriculum is updated regularly according to the guidelines of the university, ensuring that students learn the latest developments and technologies in the field. The department also encourages innovative thinking, problem-solving, and teamwork, which helps students develop the skills needed to succeed in the real world.
                             </motion.p>
                         </div>
 
@@ -178,10 +162,11 @@ export default function AboutSection() {
                     </motion.div>
                 </div>
 
-                <div
+                {/* <div
                     ref={card3Ref}
+                    suppressHydrationWarning
                     className="sticky lg:sticky lg:top-28 z-30 rounded-3xl p-8 shadow-xl mb-12 about3"
-                    style={{ top: isMobile ? mobileTops.card3 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background)93%, white))" }}
+                    style={{ top: isMobile ? mobileTops.card3 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background)93%, white))", willChange: "transform" }}
                 >
                     <div className="hidden lg:block absolute -top-28 left-0" style={{ top: "7rem" }}></div>
 
@@ -237,7 +222,7 @@ export default function AboutSection() {
                             <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10" />
                         </div>
                     </motion.div>
-                </div>
+                </div> */}
             </div>
         </section>
 
