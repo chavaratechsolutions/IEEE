@@ -17,9 +17,9 @@ type Speaker = {
 
 const speakers: Speaker[] = [
     { name: "Dr. Jirawadee Polprasert", role: "Assistant Dean for Continuing Study and Venture BuilderFaculty of Engineering ", org: "Naresuan University Phitsanulok, Thailand", image: AmachiImg },
-    { name: "Dr. Biju K", role: "Assistant Professor & HoD EEE", org: "Government Engineering College, Munnar", image: BijuImg },
+    { name: "Dr. Biju K", role: "Assistant Director", org: "APJ Abdul Kalam Technological University, Kerala", image: BijuImg },
     { name: "Dr. Jaison Mathew", role: "Professor (HoD,EEE)", org: "Government Engineering College, Thrissur", image: JaisonImg },
-    { name: "Dr Ragesh G K", role: "Assistant Professor", org: "Indian Institute of Information Technology Kottayam", image: RageshImg },
+    { name: "Dr Ragesh G K", role: "Associate Dean (Industrial Relations & Funding)", org: "Indian Institute of Information Technology Kottayam", image: RageshImg },
 ];
 
 export default function SpeakersSection() {

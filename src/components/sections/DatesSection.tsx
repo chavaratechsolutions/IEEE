@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { CalendarClock } from "lucide-react";
 
 const dates = [
-    { date: "December 15, 2026", event: "Call for Papers Announcement", type: "primary" },
-    { date: "January 11, 2027", event: "Draft Paper Submission", type: "normal" },
-    { date: "February 11, 2027", event: "Notification of Acceptance", type: "normal" },
+    { date: "August 6, 2026", event: "Call for Papers Announcement", type: "primary" },
+    { date: "December 11, 2026", event: "Draft Paper Submission", type: "normal" },
+    { date: "February 5, 2027", event: "Notification of Acceptance", type: "normal" },
     { date: "March 1, 2027", event: "Final Camera-ready Paper", type: "normal" },
 ];
 
