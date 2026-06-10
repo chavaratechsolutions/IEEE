@@ -58,7 +58,7 @@ const topics = [
 
 export default function CFPSection() {
     return (
-        <section id="cfp" className="py-24 bg-background">
+        <section id="cfp" className="pt-24 pb-12 bg-background">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function CFPSection() {
                     </p>
                 </motion.div>
 
-                <div className="mb-20">
+                <div className="mb-0">
                     <div className="flex items-center gap-3 mb-10">
                         <div className="h-px flex-1 bg-border" />
                         <h3 className="text-2xl font-bold px-4">Topics of Interest</h3>
@@ -109,45 +109,7 @@ export default function CFPSection() {
                     </div>
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="relative overflow-hidden p-10 md:p-12 bg-primary/5 rounded-[2.5rem] border border-primary/20 backdrop-blur-xl"
-                >
-                    <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
-                    <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
 
-                    <div className="relative z-10 grid md:grid-cols-[1fr_auto_1.5fr] gap-12 items-center">
-                        <div className="text-center md:text-left">
-                            <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6">
-                                <FileText className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Manuscript / Submission Guidelines</h3>
-                            <p className="text-muted-foreground italic">Join us for transformative research and innovation.</p>
-                        </div>
-
-                        <div className="hidden md:block w-px h-32 bg-primary/20" />
-
-                        <div className="space-y-6">
-                            <ul className="space-y-4">
-                                {[
-                                    "Original and unpublished papers in the prescribed conference format (maximum 6 pages).",
-                                    "All submissions will undergo plagiarism check using standard plagiarism detection tools.",
-                                    "Accepted and presented papers will be submitted for inclusion into IEEE Xplore Digital Library subject to meeting IEEE Xplore's scope and quality requirements."
-                                ].map((step, k) => (
-                                    <li key={k} className="flex items-start gap-4">
-                                        <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
-                                            {k + 1}
-                                        </div>
-                                        <span className="text-muted-foreground font-medium">{step}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </motion.div>
             </div>
         </section>
     );

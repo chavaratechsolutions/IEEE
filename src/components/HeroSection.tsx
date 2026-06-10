@@ -1,11 +1,22 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, MapPin, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsVisible(window.scrollY < 100);
+        };
+        handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return (
-        <section className="relative h-[calc(100dvh-4.5rem)] flex items-center justify-center overflow-hidden bg-background">
+        <section className="relative min-h-[calc(100dvh-4.5rem)] flex items-center justify-center py-12 md:py-20 overflow-hidden bg-background">
 
             {/* Subtle static glow blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/8 rounded-full blur-3xl z-0 pointer-events-none" />
@@ -59,7 +70,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 px-2"
                 >
-                    Innovating at the IEEE International Conference on Smart Energy, Mobility, and Intelligent Infrastructure for a more sustainable future.
+                    Technically Co-Sponsored by IEEE Kerala Section.
                 </motion.p>
 
                 <motion.div
@@ -85,7 +96,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 pb-16 md:pb-0"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
 
                     <a
@@ -95,22 +106,32 @@ export default function HeroSection() {
                         Call for Paper
                     </a>
                 </motion.div>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.0 }}
+                    className="text-xs sm:text-sm text-muted-foreground/85 max-w-none mx-auto mt-8 md:mt-12 leading-relaxed px-4 pb-16 md:pb-20"
+                >
+                    The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+                </motion.p>
             </div>
 
             {/* Scroll Down Indicator */}
             <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1, y: [0, 10, 0] }}
-                transition={{
-                    opacity: { delay: 1, duration: 1 },
-                    y: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
-                }}
-                className="absolute bottom-10 md:bottom-12 left-1/2 -translate-x-1/2 text-muted-foreground z-20"
+                animate={{ opacity: isVisible ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
+                className="fixed bottom-10 md:bottom-12 right-6 md:right-12 text-muted-foreground z-20 pointer-events-none"
             >
-                <div className="flex flex-col items-center gap-2">
+                <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                    className="flex flex-col items-center gap-2"
+                >
                     <span className="text-[8px] md:text-xs uppercase tracking-widest font-medium">Scroll Down</span>
                     <ChevronDown className="w-3 h-3 md:w-5 md:h-5" />
-                </div>
+                </motion.div>
             </motion.div>
         </section>
     );

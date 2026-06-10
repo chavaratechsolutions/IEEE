@@ -10,6 +10,7 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 const navItems = [
     { name: "About", href: "#about" },
     { name: "CFP", href: "#cfp" },
+    { name: "Paper Submission", href: "#submission" },
     { name: "Tracks", href: "#tracks" },
     { name: "Dates", href: "#dates" },
     { name: "Speakers", href: "#speakers" },
@@ -141,13 +142,27 @@ export default function Navbar() {
                             animate={{ opacity: isInitialLoading ? 0 : 1 }}
                             transition={{ duration: 0.3, delay: isInitialLoading ? 0 : 0.8 }}
                             className={cn(
-                                "mr-2 transition-transform hover:scale-105",
+                                "mr-4 transition-transform hover:scale-105",
                                 isInitialLoading ? "hidden" : "block"
                             )}>
                             <img
                                 src="/ieee.jpg"
                                 alt="IEEE Logo"
                                 className="h-10 w-auto rounded-xl object-cover shadow-sm"
+                            />
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: isInitialLoading ? 0 : 1 }}
+                            transition={{ duration: 0.3, delay: isInitialLoading ? 0 : 0.8 }}
+                            className={cn(
+                                "mr-4 transition-transform hover:scale-105",
+                                isInitialLoading ? "hidden" : "block"
+                            )}>
+                            <img
+                                src="/ieee_kerala.png"
+                                alt="IEEE Kerala Logo"
+                                className="h-10 w-auto object-contain"
                             />
                         </motion.div>
                         <motion.div

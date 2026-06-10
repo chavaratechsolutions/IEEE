@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import CFPSection from "@/components/sections/CFPSection";
+import SubmissionGuidelinesSection from "@/components/sections/SubmissionGuidelinesSection";
 import TracksSection from "@/components/sections/TracksSection";
 import DatesSection from "@/components/sections/DatesSection";
 import SpeakersSection from "@/components/sections/SpeakersSection";
@@ -45,6 +46,7 @@ export default function Home() {
           <HeroSection />
           <AboutSection />
           <CFPSection />
+          <SubmissionGuidelinesSection />
           <TracksSection />
           <DatesSection />
           <SpeakersSection />
