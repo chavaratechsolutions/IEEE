@@ -175,33 +175,43 @@ export default function Navbar() {
                                     : "relative left-auto top-auto z-auto"
                             )}
                         >
-                            <motion.span
-                                layout
-                                transition={{ duration: 1, ease: "easeInOut" }}
-                                style={{
-                                    backgroundImage: isInitialLoading
-                                        ? "linear-gradient(to right, #000 50%, #e2e8f0 50%)"
-                                        : undefined,
-                                    backgroundSize: isInitialLoading ? "200% 100%" : undefined,
-                                    WebkitBackgroundClip: isInitialLoading ? "text" : undefined,
-                                    WebkitTextFillColor: isInitialLoading ? "transparent" : undefined,
-                                    color: !isInitialLoading
-                                        ? (forceBelow ? "var(--foreground)" : "#000")
-                                        : undefined,
-                                    transition: !isInitialLoading ? "color 0.8s ease" : undefined,
-                                }}
-                                animate={{
-                                    backgroundPosition: isInitialLoading ? ["100% 0", "0% 0"] : "0% 0",
-                                    transition: isInitialLoading ? { duration: 1.5, ease: "easeInOut" } : undefined
-                                }}
-                                className={cn(
-                                    "font-bold tracking-tight inline-block whitespace-nowrap",
-                                    isInitialLoading
-                                        ? "text-[8.5vw]"
-                                        : cn("text-2xl scale-100", isOverHero ? "" : "")
-                                )}>
-                                ICSEMI 2027
-                            </motion.span>
+                            <div className="relative flex items-center justify-center">
+                                <motion.img
+                                    layout
+                                    src="/icesmi27.png"
+                                    alt="ICSEMI 2027 Logo Background"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: isInitialLoading ? [0.2, 0.2, 0] : 0 }}
+                                    transition={{ 
+                                        opacity: isInitialLoading ? { duration: 2, times: [0, 0.75, 1], ease: "easeInOut" } : { duration: 0.5 },
+                                        layout: { duration: 1, ease: "easeInOut" }
+                                    }}
+                                    className={cn(
+                                        "absolute object-contain grayscale",
+                                        isInitialLoading
+                                            ? "h-20 sm:h-28 md:h-36 lg:h-48 w-auto"
+                                            : "h-10 w-auto"
+                                    )}
+                                />
+                                <motion.img
+                                    layout
+                                    src="/icesmi27.png"
+                                    alt="ICSEMI 2027 Logo"
+                                    animate={{
+                                        clipPath: isInitialLoading ? ["inset(0% 100% 0% 0%)", "inset(0% 0% 0% 0%)"] : "inset(0% 0% 0% 0%)"
+                                    }}
+                                    transition={{
+                                        clipPath: { duration: 1.5, ease: "easeInOut" },
+                                        layout: { duration: 1, ease: "easeInOut" }
+                                    }}
+                                    className={cn(
+                                        "relative object-contain z-10",
+                                        isInitialLoading
+                                            ? "h-20 sm:h-28 md:h-36 lg:h-48 w-auto"
+                                            : "h-10 w-auto"
+                                    )}
+                                />
+                            </div>
                         </motion.div>
                     </Link>
                 </motion.div>
