@@ -107,14 +107,14 @@ export default function HeroSection() {
                     </a>
                 </motion.div>
 
-                <motion.p
+                {/* <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.0 }}
                     className="text-xs sm:text-sm text-muted-foreground/85 max-w-none mx-auto mt-8 md:mt-12 leading-relaxed px-4 pb-16 md:pb-20"
                 >
                     The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-                </motion.p>
+                </motion.p> */}
             </div>
 
             {/* Scroll Down Indicator */}
