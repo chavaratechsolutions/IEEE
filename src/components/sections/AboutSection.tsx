@@ -1,0 +1,230 @@
+import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+
+export default function AboutSection() {
+    const card1Ref = useRef<HTMLDivElement>(null);
+    const card2Ref = useRef<HTMLDivElement>(null);
+    const card3Ref = useRef<HTMLDivElement>(null);
+
+    const [mobileTops, setMobileTops] = useState<{ [key: string]: number | undefined }>({});
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const calculateTops = () => {
+            const mobile = window.innerWidth < 1024;
+            setIsMobile(mobile);
+
+            if (mobile) {
+                const vh = window.innerHeight;
+                // 5vh margin
+                const margin = vh * 0.05;
+
+                const tops: { [key: string]: number } = {};
+
+                if (card1Ref.current) {
+                    // top = 95vh - height
+                    tops.card1 = vh - card1Ref.current.offsetHeight - margin;
+                }
+                if (card2Ref.current) {
+                    tops.card2 = vh - card2Ref.current.offsetHeight - margin;
+                }
+                if (card3Ref.current) {
+                    tops.card3 = vh - card3Ref.current.offsetHeight - margin;
+                }
+
+                setMobileTops(tops);
+            } else {
+                setMobileTops({});
+            }
+        };
+
+        calculateTops();
+        window.addEventListener('resize', calculateTops);
+
+        // Recalculate after a short delay to ensure content renders/images load
+        const timeout = setTimeout(calculateTops, 500);
+
+        return () => {
+            window.removeEventListener('resize', calculateTops);
+            clearTimeout(timeout);
+        };
+    }, []);
+
+    return (
+        <section id="about" className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4">
+                <div
+                    ref={card1Ref}
+                    suppressHydrationWarning
+                    className="sticky lg:sticky lg:top-20 z-10 rounded-3xl p-8 shadow-xl mb-12 about"
+                    style={{ top: isMobile ? mobileTops.card1 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background) 93%, white))", willChange: "transform" }}
+                >
+                    <div className="hidden lg:block absolute -top-20 left-0" style={{ top: "5rem" }}></div> {/* Desktop sticky offset anchor if needed, but using class is better */}
+                    {/* Note: Desktop uses lg:top-20 class. On mobile we override with inline style. 
+                        We need to ensure the class doesn't conflict. 
+                        Tailwind 'top-20' is 5rem. 
+                        If we use inline style 'top', it overrides the class. perfect. 
+                    */}
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="flex flex-col lg:flex-row gap-12 items-center mb-16"
+                    >
+                        <div className="w-full lg:flex-1">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground text-center heading-glow">About the Conference</h2>
+
+                            <motion.p
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                className="text-muted-foreground mb-4 leading-relaxed"
+                            >
+                                The International Conference on Smart Energy, Mobility, and Intelligent Infrastructure (ICSEMI2027) technically sponsored by IEEE Kerala section serves as an interdisciplinary platform focused on developing sustainable and intelligent technological systems. It brings together researchers, academicians, industry professionals, and practitioners to address emerging challenges in future infrastructure and mobility. The conference emphasizes advancements in smart energy systems, including renewable integration, smart grids, energy storage, and efficient power management. It promotes research that enhances energy reliability, efficiency, and environmental sustainability.
+                            </motion.p>
+                            <motion.p
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                className="text-muted-foreground mb-4 leading-relaxed"
+                            >
+                                ICSEMI also highlights intelligent mobility solutions such as electric vehicles, autonomous transportation, connected systems, and traffic optimization technologies. It explores the role of sensing, embedded systems, control engineering, and artificial intelligence in transforming transportation systems. The theme of intelligent infrastructure covers smart cities, cyber-physical systems, industrial automation, IoT-based monitoring, and resilient urban development. The conference underscores the importance of digital control, communication technologies, and predictive system management.
+                            </motion.p>
+                            <motion.p
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.6 }}
+                                className="text-muted-foreground mb-4 leading-relaxed"
+                            >
+                                It encourages interdisciplinary collaboration among EEE, E&I, ECE, CSE, and Mechanical Engineering to develop integrated engineering solutions. Overall, ICSEMI provides a forum for knowledge exchange, innovation, and collaborative research aimed at building energy-efficient, intelligent, and sustainable systems for future societies.
+                            </motion.p>
+                        </div>
+
+
+                    </motion.div>
+                </div>
+
+                <div
+                    ref={card2Ref}
+                    suppressHydrationWarning
+                    className="sticky lg:sticky lg:top-24 z-20 rounded-3xl p-8 shadow-xl mb-12 about2"
+                    style={{ top: isMobile ? mobileTops.card2 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background) 93%, white))", willChange: "transform" }}
+                >
+                    <div className="hidden lg:block absolute -top-24 left-0" style={{ top: "6rem" }}></div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="flex flex-col lg:flex-row-reverse gap-12 items-center mb-16"
+                    >
+                        <div className="w-full lg:flex-1">
+                            <h2 className="text-3xl font-bold mb-6 text-primary heading-glow">Carmel College of Engineering and Technology</h2>
+                            <div className="block lg:hidden w-full relative mb-8">
+                                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl relative">
+                                    <img
+                                        src="/carmel.jpg"
+                                        alt="Carmel College"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl -z-10" />
+                                <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10" />
+                            </div>
+                            <motion.p
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                className="text-muted-foreground mb-4 leading-relaxed"
+                            >
+                                Carmel College of Engineering & Technology (CCET), Punnapra, Alappuzha, established in 2014 under St. Joseph’s Carmel Educational & Charitable Trust of CMI, is a self-financing institution approved by AICTE and affiliated to APJ Abdul Kalam Technological University, Kerala. Offering B.Tech programs in Civil, Mechanical, Electrical & Electronics, and Computer Science Engineering, CCET provides modern infrastructure, advanced labs, and a strong academic environment.<br /> <br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Department of Electrical and Electronics Engineering was started in 2014 with an intake of 60 students and is affiliated with APJ Abdul Kalam Technological University, Kerala. From the beginning, the department has focused on providing quality education and practical learning experiences to help students build a strong foundation in engineering. The faculty team is highly qualified and experienced, with 25% holding Ph.D. degrees and 50% currently pursuing their doctoral studies. This creates a strong academic environment that supports both learning and research. The curriculum is updated regularly according to the guidelines of the university, ensuring that students learn the latest developments and technologies in the field. The department also encourages innovative thinking, problem-solving, and teamwork, which helps students develop the skills needed to succeed in the real world.
+                            </motion.p>
+                        </div>
+
+                        <div className="hidden lg:block w-full lg:flex-1 relative">
+                            <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl relative">
+                                <img
+                                    src="/carmel.jpg"
+                                    alt="Carmel College"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl -z-10" />
+                            <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10" />
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* <div
+                    ref={card3Ref}
+                    suppressHydrationWarning
+                    className="sticky lg:sticky lg:top-28 z-30 rounded-3xl p-8 shadow-xl mb-12 about3"
+                    style={{ top: isMobile ? mobileTops.card3 : undefined, background: "linear-gradient(to bottom, var(--background), color-mix(in srgb, var(--background)93%, white))", willChange: "transform" }}
+                >
+                    <div className="hidden lg:block absolute -top-28 left-0" style={{ top: "7rem" }}></div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="flex flex-col lg:flex-row gap-12 items-center mb-16"
+                    >
+                        <div className="w-full lg:flex-1">
+                            <h2 className="text-3xl font-bold mb-6 text-primary heading-glow">Department of Electrical and Electronics Engineering</h2>
+                            <div className="block lg:hidden w-full relative mb-8">
+                                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl relative">
+                                    <img
+                                        src="/EEE.jpg"
+                                        alt="EEE Department"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl -z-10" />
+                                <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10" />
+                            </div>
+                            <motion.p
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                className="text-muted-foreground mb-4 leading-relaxed"
+                            >
+                                The Department of Electrical and Electronics Engineering was started in 2014 with an intake of 60 students and is affiliated with APJ Abdul Kalam Technological University, Kerala. From the beginning, the department has focused on providing quality education and practical learning experiences to help students build a strong foundation in engineering. The faculty team is highly qualified and experienced, with 25% holding Ph.D. degrees and 50% currently pursuing their doctoral studies. This creates a strong academic environment that supports both learning and research. The curriculum is updated regularly according to the guidelines of the university, ensuring that students learn the latest developments and technologies in the field. The department also encourages innovative thinking, problem-solving, and teamwork, which helps students develop the skills needed to succeed in the real world.
+                            </motion.p>
+                            <motion.p
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                className="text-muted-foreground mb-4 leading-relaxed"
+                            >
+                                The department has also made great progress in research and innovation. Over the years, it has completed several government-funded projects, giving students opportunities to gain hands-on experience and work on real-world problems. It has a very active Institute of Electrical and Electronics Engineers (IEEE) student branch along with the Power and Energy Society (PES), where students participate in workshops, seminars, and competitions that help them improve their technical knowledge and leadership skills. Many events have been conducted in collaboration with IEEE, which gives students the chance to connect with professionals and experts in the field. The department has also received financial support and recognition from agencies such as Kerala Development and Innovation Strategic Council (K-DISC), Kerala State Council for Science, Technology and Environment (KSCSTE), and IEEE PES. These achievements show the department's commitment to promoting innovation, research, and student development.
+                            </motion.p>
+                        </div>
+
+                        <div className="hidden lg:block w-full lg:flex-1 relative">
+                            <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl overflow-hidden shadow-2xl relative">
+                                <img
+                                    src="/EEE.jpg"
+                                    alt="EEE Department"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl -z-10" />
+                            <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10" />
+                        </div>
+                    </motion.div>
+                </div> */}
+            </div>
+        </section>
+
+    );
+}
